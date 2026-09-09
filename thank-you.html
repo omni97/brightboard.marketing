@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedankt – BrightBoard Marketing</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        @font-face {
+            font-family: 'BB Underground';
+            src: url('fonts/P22UndergroundPro-Light.otf') format('opentype');
+            font-weight: 300 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'BB Underground';
+            src: url('fonts/P22UndergroundPro-Medium.otf') format('opentype');
+            font-weight: 501 800;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #FF8C00;
+            --dark-black: #1a1a1a;
+            --light-white: #ffffff;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'BB Underground', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--light-white);
+            line-height: 1.6;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('Rode-Duivels-3-scaled-Bewerkt-Bewerkt.jpg') center center / cover no-repeat fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .thank-you-card {
+            max-width: 560px;
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.6));
+        }
+
+        .check-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 24px;
+            border-radius: 50%;
+            background: var(--primary-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            box-shadow: 0 8px 24px rgba(255, 140, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: var(--primary-orange);
+            color: var(--light-white);
+        }
+
+        .btn:hover {
+            background: #e67e00;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 28px;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: var(--light-white);
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .lang-current {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .lang-current:hover {
+            color: var(--light-white);
+        }
+
+        .lang-caret {
+            font-size: 9px;
+            transition: transform 0.25s ease;
+        }
+
+        .lang-switch.open .lang-caret {
+            transform: rotate(180deg);
+        }
+
+        .lang-options {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            background: rgba(10, 10, 10, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 4px;
+            min-width: 64px;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            pointer-events: none;
+            transition: max-height 0.25s ease, opacity 0.2s ease;
+        }
+
+        .lang-switch.open .lang-options {
+            max-height: 200px;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lang-options button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            padding: 8px 10px;
+            border-radius: 999px;
+            text-align: center;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .lang-options button:hover {
+            color: var(--light-white);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .lang-options button.active {
+            color: var(--light-white);
+            background: var(--primary-orange);
+        }
+
+        @media (max-width: 380px) {
+            h1 {
+                font-size: 26px;
+            }
+
+            .btn {
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-current" onclick="toggleLangDropdown()" aria-expanded="false">
+            <span id="langCurrentLabel">NL</span>
+            <span class="lang-caret">▾</span>
+        </button>
+        <div class="lang-options" id="langOptions">
+            <button type="button" data-lang="nl" onclick="setLanguage('nl')">NL</button>
+            <button type="button" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+            <button type="button" data-lang="en" onclick="setLanguage('en')">EN</button>
+        </div>
+    </div>
+    <div class="thank-you-card">
+        <a href="index.html#red-devils" class="logo">
+            <img src="BB WIT.png" alt="BrightBoard Logo">
+        </a>
+        <div class="check-icon">&#10003;</div>
+        <h1 data-i18n="ty_title">Bedankt voor je aanvraag!</h1>
+        <p id="tyDesc" data-i18n="ty_desc">Je gegevens zijn goed ontvangen. Download hieronder meteen onze brochure over de VBR-aanpak tijdens de Nations League.</p>
+        <a id="tyDownload" href="BrightBoard-nations-League-VBR.pdf" class="btn" download data-i18n="ty_download">Download de brochure (PDF)</a>
+        <a href="index.html" class="back-link" data-i18n="ty_back">&larr; Terug naar de website</a>
+    </div>
+    <script>
+        const translations = {
+            nl: {
+                ty_title: 'Bedankt voor je aanvraag!',
+                ty_desc: 'Je gegevens zijn goed ontvangen. Download hieronder meteen onze brochure over de VBR-aanpak tijdens de Nations League.',
+                ty_desc_generic: 'Je gegevens zijn goed ontvangen. We nemen binnenkort contact met je op.',
+                ty_download: 'Download de brochure (PDF)',
+                ty_back: '← Terug naar de website'
+            },
+            fr: {
+                ty_title: 'Merci pour votre demande !',
+                ty_desc: 'Vos coordonnées ont bien été reçues. Téléchargez ci-dessous notre brochure sur l\'approche du VBR pendant la Ligue des Nations.',
+                ty_desc_generic: 'Vos coordonnées ont bien été reçues. Nous vous contacterons prochainement.',
+                ty_download: 'Télécharger la brochure (PDF)',
+                ty_back: '← Retour au site'
+            },
+            en: {
+                ty_title: 'Thank you for your request!',
+                ty_desc: 'Your details have been received. Download our brochure on the VBR approach during the Nations League below.',
+                ty_desc_generic: 'Your details have been received. We will contact you shortly.',
+                ty_download: 'Download the brochure (PDF)',
+                ty_back: '← Back to the website'
+            }
+        };
+
+        const isBrochure = new URLSearchParams(window.location.search).get('source') === 'brochure';
+
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key] !== undefined) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            // The brochure download is only relevant when the visitor came
+            // here via the VBR brochure popup; other forms get a generic message.
+            document.getElementById('tyDesc').textContent = isBrochure
+                ? translations[lang].ty_desc
+                : translations[lang].ty_desc_generic;
+
+            document.querySelectorAll('.lang-options button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            const currentLabel = document.getElementById('langCurrentLabel');
+            if (currentLabel) currentLabel.textContent = lang.toUpperCase();
+
+            document.documentElement.setAttribute('lang', lang);
+            localStorage.setItem('bb-lang', lang);
+            closeLangDropdown();
+        }
+
+        function toggleLangDropdown() {
+            const el = document.getElementById('langSwitch');
+            if (!el) return;
+            const isOpen = el.classList.toggle('open');
+            el.querySelector('.lang-current').setAttribute('aria-expanded', isOpen);
+        }
+
+        function closeLangDropdown() {
+            const el = document.getElementById('langSwitch');
+            if (!el) return;
+            el.classList.remove('open');
+            el.querySelector('.lang-current').setAttribute('aria-expanded', 'false');
+        }
+
+        document.addEventListener('click', function(e) {
+            const el = document.getElementById('langSwitch');
+            if (el && el.classList.contains('open') && !el.contains(e.target)) {
+                closeLangDropdown();
+            }
+        });
+
+        document.getElementById('tyDownload').hidden = !isBrochure;
+        setLanguage(localStorage.getItem('bb-lang') || 'nl');
+    </script>
+</body>
+</html>

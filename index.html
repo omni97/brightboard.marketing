@@ -1,0 +1,2274 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightBoard Marketing – Boost jouw visibiliteit</title>
+    <meta name="description" content="BrightBoard Marketing - Stadium advertising solutions voor Pro League en Red Devils">
+    <meta property="og:image" content="https://brightboard.marketing/wp-content/uploads/2026/03/BrightBoard_Logo_CMYK_OrangeBlack-1-270x270.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        @font-face {
+            font-family: 'BB Underground';
+            src: url('fonts/P22UndergroundPro-Light.otf') format('opentype');
+            font-weight: 300 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'BB Underground';
+            src: url('fonts/P22UndergroundPro-Medium.otf') format('opentype');
+            font-weight: 501 800;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #FF8C00;
+            --dark-black: #1a1a1a;
+            --light-white: #ffffff;
+            --light-gray: #f5f5f5;
+            --text-gray: #333333;
+            --border-gray: #e0e0e0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'BB Underground', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-gray);
+            line-height: 1.6;
+            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.3)), url('Rode-Duivels-3-scaled-Bewerkt-Bewerkt.jpg') center center / cover no-repeat fixed;
+        }
+
+        /* HEADER & NAV */
+        header {
+            background: rgba(10, 10, 10, 0.55);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-orange), transparent);
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--light-white);
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .nav-toggle.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .logo {
+            position: relative;
+        }
+
+        .logo img {
+            height: 24px;
+            width: auto;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 999px;
+            padding: 5px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            padding: 8px 18px;
+            border-radius: 999px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--light-white);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        nav a.active {
+            color: var(--light-white);
+            background: var(--primary-orange);
+        }
+
+        .lang-switch {
+            position: relative;
+            margin-left: 6px;
+            padding-left: 8px;
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .lang-current {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            padding: 6px 8px;
+            border-radius: 999px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .lang-current:hover {
+            color: var(--light-white);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .lang-caret {
+            font-size: 9px;
+            transition: transform 0.25s ease;
+        }
+
+        .lang-switch.open .lang-caret {
+            transform: rotate(180deg);
+        }
+
+        .lang-options {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 4px;
+            min-width: 64px;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            pointer-events: none;
+            transition: max-height 0.25s ease, opacity 0.2s ease;
+        }
+
+        .lang-switch.open .lang-options {
+            max-height: 200px;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lang-options button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            padding: 8px 10px;
+            border-radius: 999px;
+            text-align: center;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .lang-options button:hover {
+            color: var(--light-white);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .lang-options button.active {
+            color: var(--light-white);
+            background: var(--primary-orange);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: transparent;
+            color: var(--light-white);
+            padding: 80px 20px;
+            text-align: center;
+            min-height: calc(100vh - 85px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-logo {
+            display: inline-block;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+
+        .hero-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-logo img {
+            height: 90px;
+            width: auto;
+            max-width: 100%;
+            filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.6));
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 1;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: var(--light-white);
+        }
+
+        .btn-primary:hover {
+            background: #e67e00;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light-white);
+            border: 2px solid var(--primary-orange);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-orange);
+        }
+
+        /* CONTENT SECTIONS */
+        .section {
+            padding: 60px 20px;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: var(--dark-black);
+            text-align: center;
+        }
+
+        .section h2.nowrap-title {
+            white-space: nowrap;
+            font-size: clamp(15px, 5.2vw, 36px);
+        }
+
+        .title-break {
+            display: none;
+        }
+
+        @media (max-width: 700px) {
+            .section h2.nowrap-title {
+                white-space: normal;
+                font-size: 26px;
+            }
+
+            .title-break {
+                display: block;
+            }
+        }
+
+        .section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--dark-black);
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text-gray);
+        }
+
+        /* CLUBS GRID */
+        .clubs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .club-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .club-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .club-logo img {
+            max-width: 120px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* FORM */
+        .form-section {
+            background: var(--light-gray);
+            padding: 60px 20px;
+        }
+
+        .form-section h2 {
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-black);
+            font-size: 14px;
+        }
+
+        .required::after {
+            content: " *";
+            color: var(--primary-orange);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            padding: 12px;
+            border: 1px solid var(--border-gray);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        form button {
+            margin-top: 10px;
+        }
+
+        /* SLIDER (Before/After) */
+        .slider-container {
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+
+        .slider-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider-img img,
+        .slider-img video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slider-img.before {
+            z-index: 3;
+        }
+
+        .slider-img.after {
+            z-index: 5;
+            overflow: hidden;
+        }
+
+        .slider-divider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ed8b00;
+            z-index: 10;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        /* FOOTER */
+        footer {
+            position: relative;
+            background: rgba(10, 10, 10, 0.55);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            color: var(--light-white);
+            padding: 18px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -1px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-orange), transparent);
+            opacity: 0.7;
+        }
+
+        .footer-content {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 999px;
+            padding: 5px;
+        }
+
+        .footer-content a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            padding: 8px 18px;
+            border-radius: 999px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .footer-content a:hover {
+            color: var(--light-white);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-person {
+            grid-column: 1;
+            justify-self: start;
+        }
+
+        .footer-meta {
+            grid-column: 2;
+            justify-self: center;
+            text-align: center;
+        }
+
+        .contact-person {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            gap: 14px;
+            padding-left: 145px;
+            min-height: 10px;
+        }
+
+        .contact-person img {
+            position: absolute;
+            left: -6px;
+            bottom: 0;
+            height: 175px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.45));
+            pointer-events: none;
+            transform: translateY(60%);
+            opacity: 0;
+            transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s ease;
+        }
+
+        .contact-person img.in-view {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .contact-person-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 10px 18px;
+            margin-bottom: 10px;
+        }
+
+        .contact-person-info strong {
+            font-size: 14px;
+            color: var(--light-white);
+        }
+
+        .contact-person-info a {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-person-info a:hover {
+            color: var(--primary-orange);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            overflow: hidden;
+        }
+
+        .social-links a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* This particular LinkedIn badge has a lot of empty padding baked
+           into the image, so it needs to be scaled up to match the visual
+           size of the other (edge-to-edge) social icons. */
+        .social-links a.icon-linkedin img {
+            transform: scale(1.6275);
+        }
+
+        .social-links a.icon-facebook img {
+            transform: scale(0.95);
+        }
+
+        .social-links a.icon-instagram img {
+            transform: scale(1.629);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        /* FLOATING CONTACT POPUP */
+        .ri-popup {
+            position: fixed;
+            right: 24px;
+            bottom: 0;
+            z-index: 1500;
+            display: flex;
+            align-items: flex-end;
+            transform: translateY(120%);
+            opacity: 0;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .ri-popup.show {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .ri-popup img {
+            height: 150px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.45));
+            pointer-events: none;
+        }
+
+        .ri-popup-bubble {
+            position: relative;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px 16px 4px 16px;
+            padding: 14px 18px;
+            max-width: 200px;
+            margin: 0 -8px 18px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            color: var(--light-white);
+        }
+
+        .ri-popup-bubble strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .ri-popup-bubble p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .ri-popup-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .ri-popup-cta {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary-orange);
+            text-decoration: none;
+        }
+
+        .ri-popup-cta:hover {
+            text-decoration: underline;
+        }
+
+        .ri-popup-close {
+            position: absolute;
+            top: -8px;
+            right: 40px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--dark-black);
+            color: var(--light-white);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            font-size: 15px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        @media (max-width: 600px) {
+            .ri-popup {
+                right: 12px;
+            }
+
+            .ri-popup img {
+                height: 100px;
+            }
+
+            .ri-popup-bubble {
+                max-width: 150px;
+                padding: 10px 14px;
+                margin-bottom: 12px;
+            }
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--light-white);
+            padding: 32px 48px 56px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        .modal-content .form-group {
+            text-align: left;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--text-gray);
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--primary-orange);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: calc(100% + 12px);
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px;
+                background: rgba(10, 10, 10, 0.92);
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
+                border-radius: 16px;
+                padding: 8px;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                pointer-events: none;
+                transition: max-height 0.3s ease, opacity 0.3s ease;
+            }
+
+            nav.open {
+                max-height: 260px;
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            nav a {
+                text-align: center;
+                padding: 12px;
+            }
+
+            .lang-switch {
+                margin-left: 0;
+                padding-left: 0;
+                border-left: none;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+                margin-top: 4px;
+                padding-top: 8px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .lang-options {
+                left: 50%;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero-logo img {
+                height: 48px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .clubs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .club-logo {
+                min-height: 110px;
+            }
+
+            .club-logo img {
+                max-width: 90px;
+            }
+
+            .section {
+                padding: 40px 16px;
+            }
+
+            .section h2 {
+                font-size: 26px;
+            }
+
+            .page-hero h1 {
+                font-size: 30px;
+            }
+
+            #page-red-devils .page-hero {
+                min-height: 380px;
+            }
+
+            .fixtures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partner-logo {
+                padding: 14px 20px;
+            }
+
+            .partner-logo img {
+                height: 46px;
+                width: 110px;
+            }
+
+            .modal-content {
+                padding: 26px 22px 40px;
+            }
+
+            .modal-close {
+                top: 14px;
+                right: 14px;
+            }
+
+            /* Footer stacks instead of the 3-column layout, and Ri shrinks
+               so he doesn't overwhelm a narrow screen */
+            .footer-row {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                gap: 28px;
+            }
+
+            .contact-person {
+                grid-column: 1;
+                justify-self: center;
+                padding-left: 110px;
+            }
+
+            .contact-person img {
+                height: 130px;
+            }
+
+            .footer-meta {
+                grid-column: 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-logo img {
+                height: 38px;
+            }
+
+            .fixture-countdown {
+                gap: 8px;
+            }
+
+            .cd-value {
+                font-size: 18px;
+            }
+
+            .fixture-card {
+                padding: 20px 14px;
+            }
+
+            .contact-person {
+                padding-left: 92px;
+            }
+
+            .contact-person img {
+                height: 108px;
+            }
+
+            .contact-person-info {
+                padding: 8px 14px;
+            }
+
+            /* Compact brochure popup on small screens */
+            .modal-content {
+                padding: 22px 18px 28px;
+            }
+
+            .modal-content h2 {
+                font-size: 22px;
+                margin-bottom: 8px !important;
+            }
+
+            .modal-content > p {
+                font-size: 13px;
+                margin-bottom: 6px !important;
+            }
+
+            .modal-content > p:nth-of-type(2) {
+                margin-bottom: 18px !important;
+            }
+
+            #vbrBrochureForm {
+                gap: 10px;
+            }
+
+            .modal-content label {
+                font-size: 13px;
+                margin-bottom: 4px;
+            }
+
+            .modal-content input {
+                padding: 9px 10px;
+                font-size: 13px;
+            }
+
+            .modal-content form button {
+                padding: 11px;
+                font-size: 14px;
+            }
+        }
+
+        /* PAGE-SPECIFIC */
+        .page-hero {
+            background: linear-gradient(135deg, var(--dark-black) 0%, #2a2a2a 100%);
+            color: var(--light-white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .page-hero p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        #page-red-devils .page-hero {
+            background: transparent;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #page-red-devils .section h2,
+        #page-red-devils .section h3,
+        #page-red-devils .section p {
+            color: var(--light-white);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        #page-red-devils .content-block {
+            background: transparent;
+            border-left: none;
+            padding: 0;
+        }
+
+        #page-red-devils .fixture-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #page-red-devils .fixture-match,
+        #page-red-devils .fixture-meta {
+            color: var(--light-white);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        #page-red-devils .fixture-meta {
+            opacity: 0.9;
+        }
+
+        #page-red-devils .cd-unit small {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        #page-red-devils .form-section {
+            background: transparent;
+            padding: 30px 20px 60px;
+        }
+
+        #page-red-devils .section {
+            padding: 30px 20px;
+        }
+
+        #page-red-devils .slider-container {
+            margin: 20px auto;
+        }
+
+        #page-red-devils .content-block {
+            margin: 20px 0 0;
+        }
+
+        #page-red-devils .form-section h2,
+        #page-red-devils .form-section label {
+            color: var(--light-white);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .content-block {
+            background: var(--light-white);
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .partners-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .partner-logo {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .partner-logo:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3);
+        }
+
+        /* FIXTURE COUNTDOWNS */
+        .fixtures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .fixture-card {
+            background: var(--light-gray);
+            border-radius: 10px;
+            padding: 24px 18px;
+            text-align: center;
+        }
+
+        .fixture-flag {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            margin-bottom: 8px;
+        }
+
+        .fixture-flag img {
+            max-height: 100%;
+            max-width: 90px;
+            object-fit: contain;
+        }
+
+        .fixture-match {
+            font-weight: 700;
+            font-size: 17px;
+            color: var(--dark-black);
+            margin-bottom: 6px;
+        }
+
+        .fixture-meta {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 18px;
+        }
+
+        .fixture-countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .cd-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 40px;
+        }
+
+        .cd-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-orange);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .cd-unit small {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-gray);
+        }
+
+        .fixture-card.is-live .cd-value {
+            color: #e63946;
+        }
+
+        .partner-logo img {
+            height: 60px;
+            width: 140px;
+            object-fit: contain;
+            display: block;
+        }
+
+        #page-pro-league .page-hero {
+            background: transparent;
+        }
+
+        #page-pro-league .section h2,
+        #page-pro-league .section h3,
+        #page-pro-league .section p {
+            color: var(--light-white);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        #page-pro-league .club-logo {
+            background: transparent;
+        }
+
+        #page-pro-league .form-section {
+            background: transparent;
+            padding: 30px 20px 60px;
+        }
+
+        #page-pro-league .form-section h2 {
+            color: var(--light-white);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        #page-pro-league .form-section label {
+            color: var(--light-white);
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        #page-pro-league form {
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="mainHeader">
+        <div class="container">
+            <a href="#home" onclick="showPage('home'); return false;" class="logo">
+                <img src="BB WIT.png" alt="BrightBoard Logo" style="height: 22px; width: auto;">
+            </a>
+            <button class="nav-toggle" id="navToggle" onclick="toggleMobileNav()" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="#home" data-page="home" class="active" onclick="showPage('home'); return false;" data-i18n="nav_home">Home</a>
+                <a href="#pro-league" data-page="pro-league" onclick="showPage('pro-league'); return false;" data-i18n="nav_proleague">Pro League</a>
+                <a href="#red-devils" data-page="red-devils" onclick="showPage('red-devils'); return false;" data-i18n="nav_reddevils">Red Devils</a>
+                <div class="lang-switch" id="langSwitch">
+                    <button type="button" class="lang-current" onclick="toggleLangDropdown()" aria-expanded="false">
+                        <span id="langCurrentLabel">NL</span>
+                        <span class="lang-caret">▾</span>
+                    </button>
+                    <div class="lang-options" id="langOptions">
+                        <button type="button" data-lang="nl" onclick="setLanguage('nl')">NL</button>
+                        <button type="button" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+                        <button type="button" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="page-home">
+        <div class="hero">
+            <div class="container">
+                <a href="#home" onclick="showPage('home'); return false;" class="hero-logo">
+                    <img src="BB WIT.png" alt="BrightBoard Logo">
+                </a>
+                <h1 data-i18n="home_h1">CHOOSE YOUR FOOTBALL PARTNERSHIP</h1>
+                <p data-i18n="home_sub">Select the competition that fits your marketing objectives.</p>
+                <div class="cta-buttons">
+                    <a href="#" onclick="showPage('pro-league'); return false;" class="btn btn-primary"><span style="display: inline-block; transform: translateY(3px);" data-i18n="home_cta_proleague">Pro League partnerships</span></a>
+                    <a href="#" onclick="showPage('red-devils'); return false;" class="btn btn-secondary" data-i18n="home_cta_reddevils">Red Devils VBR partnerships</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRO LEAGUE PAGE -->
+    <div id="page-pro-league" style="display: none;">
+        <div class="page-hero">
+            <div class="container">
+                <h1 data-i18n="pl_h1">Adverteer bij onze Pro League-clubs</h1>
+                <div class="cta-buttons">
+                    <a href="#clubs" class="btn btn-primary"><span style="display: inline-block; transform: translateY(3px);" data-i18n="pl_cta_offer">Bekijk ons aanbod</span></a>
+                    <a href="#form" class="btn btn-secondary" data-i18n="pl_cta_contact">Contacteer ons →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="padding-bottom: 20px;">
+            <div class="container">
+                <h2 data-i18n="pl_h2_reach">Bereik voetbalfans in heel België</h2>
+                <p style="text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;" data-i18n="pl_p_reach">Bereik een van de meest betrokken doelgroepen in het land via mediaruimte bij Pro League clubs. Tijdens wedstrijden bevindt je merk zich in een context van maximale aandacht, waar fans niet alleen kijken, maar actief meeleven. Door zichtbaar te zijn op cruciale momenten — goals, herhalingen, beslissende fases — bouw je sterke merkherkenning op met hoge contactfrequentie.</p>
+            </div>
+        </div>
+
+        <div class="section" style="padding-top: 20px;">
+            <div class="container">
+                <h2 id="clubs" data-i18n="pl_h2_clubs">Onze clubs</h2>
+                <div class="clubs-grid">
+                    <div class="club-logo">
+                        <img src="Pro League Logo's/royal-antwerp-fc.webp" alt="Royal Antwerp FC">
+                    </div>
+                    <div class="club-logo">
+                        <img src="Pro League Logo's/royale-union-saint-gilloise.webp" alt="Royale Union Saint-Gilloise">
+                    </div>
+                    <div class="club-logo">
+                        <img src="Pro League Logo's/sint-truidense-vv.webp" alt="Sint-Truidense VV">
+                    </div>
+                    <div class="club-logo">
+                        <img src="Pro League Logo's/SK_Beveren_logo.svg.webp" alt="SK Beveren">
+                    </div>
+                    <div class="club-logo">
+                        <img src="Pro League Logo's/sv-zulte-waregem.webp" alt="SV Zulte Waregem">
+                    </div>
+                    <div class="club-logo">
+                        <img src="Pro League Logo's/westerlo.363758cb.png" alt="K.A.A. Westerlo">
+                    </div>
+                    <div class="club-logo">
+                        <img src="Pro League Logo's/SK Lommel.png" alt="Lommel SK">
+                    </div>
+                    <div class="club-logo">
+                        <img src="Pro League Logo's/krc-genk.webp" alt="KRC Genk">
+                    </div>
+                    <div class="club-logo">
+                        <img src="Pro League Logo's/kv-kortrijk.webp" alt="KV Kortrijk">
+                    </div>
+                    <div class="club-logo">
+                        <img src="Pro League Logo's/kv-mechelen.webp" alt="KV Mechelen">
+                    </div>
+                    <div class="club-logo">
+                        <img src="Pro League Logo's/OH_LEUVEN (1).png" alt="OH Leuven">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section" id="form">
+            <div class="container">
+                <h2 data-i18n="pl_h2_contact">Neem contact op</h2>
+                <div class="form-container">
+                    <form id="proLeagueForm">
+                        <input type="hidden" name="utm_source" class="utm-field">
+                        <input type="hidden" name="utm_medium" class="utm-field">
+                        <input type="hidden" name="utm_campaign" class="utm-field">
+                        <div class="form-group">
+                            <label class="required" data-i18n="form_firstname">Voornaam</label>
+                            <input type="text" name="firstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" data-i18n="form_lastname">Naam</label>
+                            <input type="text" name="lastname" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" data-i18n="form_email">E-mailadres</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" data-i18n="form_phone">Telefoon</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" data-i18n="form_company">Bedrijfsnaam</label>
+                            <input type="text" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="form_region">Regio</label>
+                            <select name="region">
+                                <option value="" data-i18n="form_region_placeholder">Selecteer een regio</option>
+                                <option value="vlaams-brabant" data-i18n="region_vlbrabant">Vlaams-Brabant</option>
+                                <option value="limburg" data-i18n="region_limburg">Limburg</option>
+                                <option value="antwerpen" data-i18n="region_antwerpen">Antwerpen</option>
+                                <option value="oost-vlaanderen" data-i18n="region_oostvl">Oost-Vlaanderen</option>
+                                <option value="west-vlaanderen" data-i18n="region_westvl">West-Vlaanderen</option>
+                                <option value="brussel" data-i18n="region_brussel">Brussel</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="form_comment">Commentaar</label>
+                            <textarea name="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="form_submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RED DEVILS PAGE -->
+    <div id="page-red-devils" style="display: none;">
+        <div class="page-hero">
+            <div class="container">
+                <h1 data-i18n="rd_h1">BUY VISIBILITY IN FOOTBALL</h1>
+                <p data-i18n="rd_sub">Bring your brand to the heart of the stadium. With VBR, your message reaches Belgium national football team fans via LED boarding—maximum visibility, immediate impact.</p>
+                <div class="cta-buttons">
+                    <a href="#vbr" class="btn btn-primary"><span style="display: inline-block; transform: translateY(3px);" data-i18n="rd_cta_readmore">Read more</span></a>
+                    <a href="#form-rd" class="btn btn-secondary" data-i18n="rd_cta_contact">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="vbr">
+            <div class="container">
+                <h2 data-i18n="rd_h2_vbr">Discover VBR - Before and after</h2>
+                <p data-i18n="rd_p_vbr">With VBR (Virtual Boarding Replacement), you can bring your brand directly to the Red Devils' fans, wherever they're playing. Even during the Red Devils' away matches, partners' adverts are specifically shown to the Belgian audience, without any loss of quality.</p>
+                
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <div class="slider-img before">
+                            <video autoplay muted loop playsinline>
+                                <source src="before-after/Red Devils VBR Kroatische Reclame.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="slider-img after">
+                            <video autoplay muted loop playsinline>
+                                <source src="before-after/Red Devils VBR Belgische Reclame.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="slider-divider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <h2 class="nowrap-title" data-i18n-html="rd_title_overlay">Enhance visibility with<br class="title-break"> virtual overlay</h2>
+                <p data-i18n="rd_p_overlay">Virtual overlay technology allows you to dynamically adapt the content shown on LED boarding to different audiences, moments, and platforms. By integrating virtual ads into the live broadcast feed, you can localize and personalize your messaging — without altering the in-stadium experience.</p>
+
+                <div class="content-block">
+                    <h3 data-i18n="rd_h3_fixtures">Upcoming Red Devils Away Fixtures</h3>
+                    <div class="fixtures-grid">
+                        <div class="fixture-card" data-kickoff="2026-09-25T20:45:00+01:00">
+                            <div class="fixture-flag"><img src="opponents/Italy-National-Football-Team-Logo.png" alt="Italy"></div>
+                            <div class="fixture-match" data-i18n="fx_it_match">Italy vs Belgium</div>
+                            <div class="fixture-meta" data-i18n="fx_it_meta">Italy &middot; 25 September 2026 &middot; 20:45 CET</div>
+                            <div class="fixture-countdown">
+                                <div class="cd-unit"><span class="cd-value cd-days">00</span><small data-i18n="cd_days">days</small></div>
+                                <div class="cd-unit"><span class="cd-value cd-hours">00</span><small data-i18n="cd_hrs">hrs</small></div>
+                                <div class="cd-unit"><span class="cd-value cd-mins">00</span><small data-i18n="cd_min">min</small></div>
+                                <div class="cd-unit"><span class="cd-value cd-secs">00</span><small data-i18n="cd_sec">sec</small></div>
+                            </div>
+                        </div>
+                        <div class="fixture-card" data-kickoff="2026-10-05T20:45:00+01:00">
+                            <div class="fixture-flag"><img src="opponents/Frankrijk-Logo.png" alt="France"></div>
+                            <div class="fixture-match" data-i18n="fx_fr_match">France vs Belgium</div>
+                            <div class="fixture-meta" data-i18n="fx_fr_meta">France &middot; 5 October 2026 &middot; 20:45 CET</div>
+                            <div class="fixture-countdown">
+                                <div class="cd-unit"><span class="cd-value cd-days">00</span><small data-i18n="cd_days">days</small></div>
+                                <div class="cd-unit"><span class="cd-value cd-hours">00</span><small data-i18n="cd_hrs">hrs</small></div>
+                                <div class="cd-unit"><span class="cd-value cd-mins">00</span><small data-i18n="cd_min">min</small></div>
+                                <div class="cd-unit"><span class="cd-value cd-secs">00</span><small data-i18n="cd_sec">sec</small></div>
+                            </div>
+                        </div>
+                        <div class="fixture-card" data-kickoff="2026-11-12T18:00:00+01:00">
+                            <div class="fixture-flag"><img src="opponents/Turkey-National-Football-Team-Logo.png" alt="Türkiye"></div>
+                            <div class="fixture-match" data-i18n="fx_tr_match">Türkiye vs Belgium</div>
+                            <div class="fixture-meta" data-i18n="fx_tr_meta">Türkiye &middot; 12 November 2026 &middot; 18:00 CET</div>
+                            <div class="fixture-countdown">
+                                <div class="cd-unit"><span class="cd-value cd-days">00</span><small data-i18n="cd_days">days</small></div>
+                                <div class="cd-unit"><span class="cd-value cd-hours">00</span><small data-i18n="cd_hrs">hrs</small></div>
+                                <div class="cd-unit"><span class="cd-value cd-mins">00</span><small data-i18n="cd_min">min</small></div>
+                                <div class="cd-unit"><span class="cd-value cd-secs">00</span><small data-i18n="cd_sec">sec</small></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="text-align: center; margin-top: 20px;"><a href="#form-rd" class="btn btn-primary" data-i18n="rd_partner_cta">Let's partner up!</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section" id="form-rd">
+            <div class="container">
+                <h2 data-i18n="rd_h2_gettouch">Get in Touch</h2>
+                <div class="form-container">
+                    <form id="redDevilsForm">
+                        <input type="hidden" name="utm_source" class="utm-field">
+                        <input type="hidden" name="utm_medium" class="utm-field">
+                        <input type="hidden" name="utm_campaign" class="utm-field">
+                        <div class="form-group">
+                            <label class="required" data-i18n="form_firstname">First name</label>
+                            <input type="text" name="firstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" data-i18n="form_lastname">Surname</label>
+                            <input type="text" name="lastname" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" data-i18n="form_email">E-mail address</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" data-i18n="modal_phone">Phone number</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" data-i18n="form_company">Company name</label>
+                            <input type="text" name="company" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="form_submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-row">
+            <div class="contact-person">
+                <img src="Ri.png" alt="Ri Verspecht">
+                <div class="contact-person-info">
+                    <strong>Ri Verspecht</strong>
+                    <a href="mailto:ri@brightboard.eu">ri@brightboard.eu</a>
+                    <a href="tel:+32478922152">+32 478 92 21 52</a>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/brightboard-advertising" target="_blank" title="LinkedIn" class="icon-linkedin">
+                        <img src="socials/linkedin-logo-linkedin-icon-transparent-free-png.webp" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.facebook.com/BrightensYourBrand" target="_blank" title="Facebook" class="icon-facebook">
+                        <img src="socials/Facebook_Logo_(2019).png" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/brightboard" target="_blank" title="Instagram" class="icon-instagram">
+                        <img src="socials/instagram-button-icon-set-instagram-screen-social-media-and-social-network-interface-template-stories-user-button-symbol-sign-logo-stories-liked-editorial-free-png.webp" alt="Instagram">
+                    </a>
+                </div>
+                <p style="margin-top: 8px; opacity: 0.7; font-size: 12px;" data-i18n="footer_copyright">© 2026 BrightBoard Marketing. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VBR BROCHURE MODAL -->
+    <div id="vbrModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h2 style="margin-bottom: 14px;" data-i18n="modal_title">Gratis brochure</h2>
+            <p style="font-weight: 600; color: var(--dark-black); margin-bottom: 8px;" data-i18n="modal_subtitle">VBR tijdens de Nations League</p>
+            <p style="margin-bottom: 32px;" data-i18n="modal_desc">Ben je benieuwd naar onze aanpak voor de VBR tijdens de Nations League? Vul hieronder je gegevens in en ontvang de brochure als gratis download.</p>
+            <form id="vbrBrochureForm">
+                <input type="hidden" name="utm_source" class="utm-field">
+                <input type="hidden" name="utm_medium" class="utm-field">
+                <input type="hidden" name="utm_campaign" class="utm-field">
+                <div class="form-group">
+                    <label class="required" data-i18n="form_firstname">Voornaam</label>
+                    <input type="text" name="firstname" required>
+                </div>
+                <div class="form-group">
+                    <label class="required" data-i18n="form_lastname">Naam</label>
+                    <input type="text" name="lastname" required>
+                </div>
+                <div class="form-group">
+                    <label class="required" data-i18n="form_email">E-mailadres</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label class="required" data-i18n="modal_phone">Telefoonnummer</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label class="required" data-i18n="modal_company">Bedrijf</label>
+                    <input type="text" name="company" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="modal_submit">Ontvang de brochure</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FLOATING CONTACT POPUP -->
+    <div id="riPopup" class="ri-popup">
+        <button class="ri-popup-close" onclick="closeRiPopup()" aria-label="Sluiten">&times;</button>
+        <div class="ri-popup-bubble">
+            <strong data-i18n="ripopup_title">Contacteer me</strong>
+            <p data-i18n="ripopup_desc">en we bespreken samen de opties.</p>
+            <div class="ri-popup-actions">
+                <a href="mailto:ri@brightboard.eu?subject=Interesse%20in%20BrightBoard" class="ri-popup-cta" data-i18n="ripopup_mail">✉ Mail me</a>
+                <a href="tel:+32478922152" class="ri-popup-cta" data-i18n="ripopup_call">☎ Bel me</a>
+            </div>
+        </div>
+        <img src="Ri.png" alt="Ri Verspecht">
+    </div>
+
+    <script>
+        // TRANSLATIONS
+        const translations = {
+            nl: {
+                nav_home: 'Home',
+                nav_proleague: 'Pro League',
+                nav_reddevils: 'Red Devils',
+                home_h1: 'KIES JOUW VOETBALPARTNERSHIP',
+                home_sub: 'Selecteer de competitie die past bij jouw marketingdoelstellingen.',
+                home_cta_proleague: 'Pro League partnerships',
+                home_cta_reddevils: 'Red Devils VBR partnerships',
+                pl_h1: 'Adverteer bij onze Pro League-clubs',
+                pl_cta_offer: 'Bekijk ons aanbod',
+                pl_cta_contact: 'Contacteer ons →',
+                pl_h2_reach: 'Bereik voetbalfans in heel België',
+                pl_p_reach: 'Bereik een van de meest betrokken doelgroepen in het land via mediaruimte bij Pro League clubs. Tijdens wedstrijden bevindt je merk zich in een context van maximale aandacht, waar fans niet alleen kijken, maar actief meeleven. Door zichtbaar te zijn op cruciale momenten — goals, herhalingen, beslissende fases — bouw je sterke merkherkenning op met hoge contactfrequentie.',
+                pl_h2_clubs: 'Onze clubs',
+                pl_h2_contact: 'Neem contact op',
+                rd_h1: 'KOOP ZICHTBAARHEID IN VOETBAL',
+                rd_sub: 'Breng jouw merk naar het hart van het stadion. Met VBR bereikt jouw boodschap de fans van de Belgische nationale voetbalploeg via LED-boarding — maximale zichtbaarheid, onmiddellijke impact.',
+                rd_cta_readmore: 'Lees meer',
+                rd_cta_contact: 'Contact',
+                rd_h2_vbr: 'Ontdek VBR - Voor en na',
+                rd_p_vbr: 'Met VBR (Virtual Boarding Replacement) breng je jouw merk rechtstreeks bij de fans van de Red Devils, waar ze ook spelen. Zelfs tijdens uitwedstrijden van de Red Devils worden de advertenties van partners specifiek getoond aan het Belgische publiek, zonder kwaliteitsverlies.',
+                rd_title_overlay: 'Verhoog zichtbaarheid met<br class="title-break"> virtuele overlay',
+                rd_p_overlay: 'Virtuele overlaytechnologie laat je toe om de content op LED-boarding dynamisch aan te passen aan verschillende doelgroepen, momenten en platformen. Door virtuele advertenties te integreren in de live-uitzending, kun je jouw boodschap lokaliseren en personaliseren — zonder de beleving in het stadion te veranderen.',
+                rd_h3_fixtures: 'Aankomende uitwedstrijden Red Devils',
+                fx_it_match: 'Italië vs België',
+                fx_it_meta: 'Italië · 25 september 2026 · 20:45 CET',
+                fx_fr_match: 'Frankrijk vs België',
+                fx_fr_meta: 'Frankrijk · 5 oktober 2026 · 20:45 CET',
+                fx_tr_match: 'Turkije vs België',
+                fx_tr_meta: 'Turkije · 12 november 2026 · 18:00 CET',
+                cd_days: 'dagen',
+                cd_hrs: 'uur',
+                cd_min: 'min',
+                cd_sec: 'sec',
+                rd_partner_cta: "Laten we samenwerken!",
+                rd_h2_gettouch: 'Neem contact op',
+                form_firstname: 'Voornaam',
+                form_lastname: 'Naam',
+                form_email: 'E-mailadres',
+                form_phone: 'Telefoon',
+                form_company: 'Bedrijfsnaam',
+                form_region: 'Regio',
+                form_region_placeholder: 'Selecteer een regio',
+                region_vlbrabant: 'Vlaams-Brabant',
+                region_limburg: 'Limburg',
+                region_antwerpen: 'Antwerpen',
+                region_oostvl: 'Oost-Vlaanderen',
+                region_westvl: 'West-Vlaanderen',
+                region_brussel: 'Brussel',
+                form_comment: 'Commentaar',
+                form_submit: 'Verzenden',
+                footer_copyright: '© 2026 BrightBoard Marketing. Alle rechten voorbehouden.',
+                modal_title: 'Gratis brochure',
+                modal_subtitle: 'VBR tijdens de Nations League',
+                modal_desc: 'Ben je benieuwd naar onze aanpak voor de VBR tijdens de Nations League? Vul hieronder je gegevens in en ontvang de brochure als gratis download.',
+                modal_phone: 'Telefoonnummer',
+                modal_company: 'Bedrijf',
+                modal_submit: 'Ontvang de brochure',
+                ripopup_title: 'Contacteer me',
+                ripopup_desc: 'en we bespreken samen de opties.',
+                ripopup_mail: '✉ Mail me',
+                ripopup_call: '☎ Bel me'
+            },
+            fr: {
+                nav_home: 'Accueil',
+                nav_proleague: 'Pro League',
+                nav_reddevils: 'Red Devils',
+                home_h1: 'CHOISISSEZ VOTRE PARTENARIAT FOOTBALL',
+                home_sub: 'Sélectionnez la compétition qui correspond à vos objectifs marketing.',
+                home_cta_proleague: 'Partenariats Pro League',
+                home_cta_reddevils: 'Partenariats VBR Red Devils',
+                pl_h1: 'Faites de la publicité avec nos clubs Pro League',
+                pl_cta_offer: 'Découvrez notre offre',
+                pl_cta_contact: 'Contactez-nous →',
+                pl_h2_reach: 'Touchez les fans de football dans toute la Belgique',
+                pl_p_reach: "Touchez l'une des audiences les plus engagées du pays grâce à l'espace média dans les clubs de Pro League. Pendant les matchs, votre marque se trouve dans un contexte d'attention maximale, où les fans ne se contentent pas de regarder, mais vivent le match activement. En étant visible aux moments cruciaux — buts, ralentis, phases décisives — vous construisez une forte reconnaissance de marque avec une fréquence de contact élevée.",
+                pl_h2_clubs: 'Nos clubs',
+                pl_h2_contact: 'Contactez-nous',
+                rd_h1: 'ACHETEZ DE LA VISIBILITÉ DANS LE FOOTBALL',
+                rd_sub: 'Amenez votre marque au cœur du stade. Avec le VBR, votre message atteint les fans de l\'équipe nationale belge de football via les panneaux LED — visibilité maximale, impact immédiat.',
+                rd_cta_readmore: 'En savoir plus',
+                rd_cta_contact: 'Contact',
+                rd_h2_vbr: 'Découvrez le VBR - Avant et après',
+                rd_p_vbr: "Avec le VBR (Virtual Boarding Replacement), vous amenez votre marque directement chez les fans des Red Devils, où qu'ils jouent. Même lors des matchs à l'extérieur des Red Devils, les publicités des partenaires sont spécifiquement diffusées pour le public belge, sans aucune perte de qualité.",
+                rd_title_overlay: 'Améliorez la visibilité avec<br class="title-break"> l\'overlay virtuel',
+                rd_p_overlay: "La technologie d'overlay virtuel vous permet d'adapter dynamiquement le contenu affiché sur les panneaux LED à différents publics, moments et plateformes. En intégrant des publicités virtuelles dans le flux de diffusion en direct, vous pouvez localiser et personnaliser votre message — sans modifier l'expérience dans le stade.",
+                rd_h3_fixtures: "Prochains matchs à l'extérieur des Red Devils",
+                fx_it_match: 'Italie vs Belgique',
+                fx_it_meta: 'Italie · 25 septembre 2026 · 20h45 CET',
+                fx_fr_match: 'France vs Belgique',
+                fx_fr_meta: 'France · 5 octobre 2026 · 20h45 CET',
+                fx_tr_match: 'Turquie vs Belgique',
+                fx_tr_meta: 'Turquie · 12 novembre 2026 · 18h00 CET',
+                cd_days: 'jours',
+                cd_hrs: 'h',
+                cd_min: 'min',
+                cd_sec: 'sec',
+                rd_partner_cta: 'Devenons partenaires !',
+                rd_h2_gettouch: 'Contactez-nous',
+                form_firstname: 'Prénom',
+                form_lastname: 'Nom',
+                form_email: 'Adresse e-mail',
+                form_phone: 'Téléphone',
+                form_company: "Nom de l'entreprise",
+                form_region: 'Région',
+                form_region_placeholder: 'Sélectionnez une région',
+                region_vlbrabant: 'Brabant flamand',
+                region_limburg: 'Limbourg',
+                region_antwerpen: 'Anvers',
+                region_oostvl: 'Flandre-Orientale',
+                region_westvl: 'Flandre-Occidentale',
+                region_brussel: 'Bruxelles',
+                form_comment: 'Commentaire',
+                form_submit: 'Envoyer',
+                footer_copyright: '© 2026 BrightBoard Marketing. Tous droits réservés.',
+                modal_title: 'Brochure gratuite',
+                modal_subtitle: 'Le VBR pendant la Ligue des Nations',
+                modal_desc: 'Curieux de découvrir notre approche du VBR pendant la Ligue des Nations ? Complétez vos coordonnées ci-dessous et recevez la brochure en téléchargement gratuit.',
+                modal_phone: 'Numéro de téléphone',
+                modal_company: 'Entreprise',
+                modal_submit: 'Recevoir la brochure',
+                ripopup_title: 'Contactez-moi',
+                ripopup_desc: 'et discutons ensemble des options.',
+                ripopup_mail: '✉ Écrivez-moi',
+                ripopup_call: '☎ Appelez-moi'
+            },
+            en: {
+                nav_home: 'Home',
+                nav_proleague: 'Pro League',
+                nav_reddevils: 'Red Devils',
+                home_h1: 'CHOOSE YOUR FOOTBALL PARTNERSHIP',
+                home_sub: 'Select the competition that fits your marketing objectives.',
+                home_cta_proleague: 'Pro League partnerships',
+                home_cta_reddevils: 'Red Devils VBR partnerships',
+                pl_h1: 'Advertise with our Pro League clubs',
+                pl_cta_offer: 'View our offer',
+                pl_cta_contact: 'Contact us →',
+                pl_h2_reach: 'Reach football fans across Belgium',
+                pl_p_reach: "Reach one of the most engaged audiences in the country through media space at Pro League clubs. During matches, your brand is placed in a context of maximum attention, where fans don't just watch — they actively engage. By being visible at crucial moments — goals, replays, decisive phases — you build strong brand recognition with high contact frequency.",
+                pl_h2_clubs: 'Our clubs',
+                pl_h2_contact: 'Get in touch',
+                rd_h1: 'BUY VISIBILITY IN FOOTBALL',
+                rd_sub: "Bring your brand to the heart of the stadium. With VBR, your message reaches Belgium national football team fans via LED boarding—maximum visibility, immediate impact.",
+                rd_cta_readmore: 'Read more',
+                rd_cta_contact: 'Contact',
+                rd_h2_vbr: 'Discover VBR - Before and after',
+                rd_p_vbr: "With VBR (Virtual Boarding Replacement), you can bring your brand directly to the Red Devils' fans, wherever they're playing. Even during the Red Devils' away matches, partners' adverts are specifically shown to the Belgian audience, without any loss of quality.",
+                rd_title_overlay: 'Enhance visibility with<br class="title-break"> virtual overlay',
+                rd_p_overlay: "Virtual overlay technology allows you to dynamically adapt the content shown on LED boarding to different audiences, moments, and platforms. By integrating virtual ads into the live broadcast feed, you can localize and personalize your messaging — without altering the in-stadium experience.",
+                rd_h3_fixtures: 'Upcoming Red Devils Away Fixtures',
+                fx_it_match: 'Italy vs Belgium',
+                fx_it_meta: 'Italy · 25 September 2026 · 20:45 CET',
+                fx_fr_match: 'France vs Belgium',
+                fx_fr_meta: 'France · 5 October 2026 · 20:45 CET',
+                fx_tr_match: 'Türkiye vs Belgium',
+                fx_tr_meta: 'Türkiye · 12 November 2026 · 18:00 CET',
+                cd_days: 'days',
+                cd_hrs: 'hrs',
+                cd_min: 'min',
+                cd_sec: 'sec',
+                rd_partner_cta: "Let's partner up!",
+                rd_h2_gettouch: 'Get in Touch',
+                form_firstname: 'First name',
+                form_lastname: 'Surname',
+                form_email: 'E-mail address',
+                form_phone: 'Phone',
+                form_company: 'Company name',
+                form_region: 'Region',
+                form_region_placeholder: 'Select a region',
+                region_vlbrabant: 'Flemish Brabant',
+                region_limburg: 'Limburg',
+                region_antwerpen: 'Antwerp',
+                region_oostvl: 'East Flanders',
+                region_westvl: 'West Flanders',
+                region_brussel: 'Brussels',
+                form_comment: 'Comment',
+                form_submit: 'Submit',
+                footer_copyright: '© 2026 BrightBoard Marketing. All rights reserved.',
+                modal_title: 'Free brochure',
+                modal_subtitle: 'VBR during the Nations League',
+                modal_desc: 'Curious about our approach to VBR during the Nations League? Fill in your details below and receive the brochure as a free download.',
+                modal_phone: 'Phone number',
+                modal_company: 'Company',
+                modal_submit: 'Get the brochure',
+                ripopup_title: 'Contact me',
+                ripopup_desc: "and we'll discuss the options together.",
+                ripopup_mail: '✉ Mail me',
+                ripopup_call: '☎ Call me'
+            }
+        };
+
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key] !== undefined) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.getAttribute('data-i18n-html');
+                if (translations[lang][key] !== undefined) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('.lang-options button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            const currentLabel = document.getElementById('langCurrentLabel');
+            if (currentLabel) currentLabel.textContent = lang.toUpperCase();
+
+            document.documentElement.setAttribute('lang', lang);
+            localStorage.setItem('bb-lang', lang);
+            closeLangDropdown();
+        }
+
+        // LANGUAGE DROPDOWN
+        function toggleLangDropdown() {
+            const el = document.getElementById('langSwitch');
+            if (!el) return;
+            const isOpen = el.classList.toggle('open');
+            el.querySelector('.lang-current').setAttribute('aria-expanded', isOpen);
+        }
+
+        function closeLangDropdown() {
+            const el = document.getElementById('langSwitch');
+            if (!el) return;
+            el.classList.remove('open');
+            el.querySelector('.lang-current').setAttribute('aria-expanded', 'false');
+        }
+
+        document.addEventListener('click', function(e) {
+            const el = document.getElementById('langSwitch');
+            if (el && el.classList.contains('open') && !el.contains(e.target)) {
+                closeLangDropdown();
+            }
+        });
+
+        // PAGE NAVIGATION
+        let brochureModalTimer = null;
+
+        function showPage(pageName) {
+            // Hide all pages
+            document.getElementById('page-home').style.display = 'none';
+            document.getElementById('page-pro-league').style.display = 'none';
+            document.getElementById('page-red-devils').style.display = 'none';
+
+            // Show selected page
+            document.getElementById('page-' + pageName).style.display = 'block';
+
+            // Highlight the active nav link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.toggle('active', link.dataset.page === pageName);
+            });
+
+            // Close the mobile menu after navigating
+            closeMobileNav();
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+
+            // Show the brochure lead-capture popup 15 seconds after landing on the Red Devils page
+            clearTimeout(brochureModalTimer);
+            if (pageName === 'red-devils') {
+                brochureModalTimer = setTimeout(openModal, 15000);
+            }
+        }
+
+        // MOBILE NAV
+        function toggleMobileNav() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.getElementById('navToggle');
+            const isOpen = nav.classList.toggle('open');
+            toggle.classList.toggle('open', isOpen);
+            toggle.setAttribute('aria-expanded', isOpen);
+        }
+
+        function closeMobileNav() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.getElementById('navToggle');
+            nav.classList.remove('open');
+            toggle.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+
+        // MODAL FUNCTIONS
+        function openModal() {
+            document.getElementById('vbrModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('vbrModal').classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        // BEFORE/AFTER SLIDER
+        function initSlider() {
+            const slider = document.querySelector('.slider-wrapper');
+            const afterImg = document.querySelector('.slider-img.after');
+            const divider = document.querySelector('.slider-divider');
+            let isActive = false;
+
+            if (!slider) return;
+
+            // Cap both clips at 10 seconds and keep them perfectly in sync.
+            // One video is the "master" clock; the other is corrected to
+            // match it whenever they drift apart (independent playback
+            // otherwise slowly desyncs the two clips over time).
+            const [videoA, videoB] = slider.querySelectorAll('video');
+
+            if (videoA && videoB) {
+                videoA.addEventListener('timeupdate', () => {
+                    if (videoA.currentTime >= 10) {
+                        videoA.currentTime = 0;
+                        videoB.currentTime = 0;
+                    } else if (Math.abs(videoA.currentTime - videoB.currentTime) > 0.15) {
+                        videoB.currentTime = videoA.currentTime;
+                    }
+                });
+
+                // Start both clips together, once they're both ready
+                Promise.all([
+                    new Promise(res => videoA.readyState >= 2 ? res() : videoA.addEventListener('canplay', res, { once: true })),
+                    new Promise(res => videoB.readyState >= 2 ? res() : videoB.addEventListener('canplay', res, { once: true }))
+                ]).then(() => {
+                    videoA.currentTime = 0;
+                    videoB.currentTime = 0;
+                    videoA.play();
+                    videoB.play();
+                });
+            }
+
+            function setPosition(percentage) {
+                // clip-path is purely percentage-based, so it's correct even
+                // while the page is still hidden (display: none) and doesn't
+                // rely on measuring pixel widths.
+                afterImg.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+                divider.style.left = percentage + '%';
+            }
+
+            function updateSlider(e) {
+                if (!isActive) return;
+
+                const rect = slider.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+
+                if (e.type.includes('touch')) {
+                    x = e.touches[0].clientX - rect.left;
+                }
+
+                if (x < 0) x = 0;
+                if (x > rect.width) x = rect.width;
+
+                setPosition((x / rect.width) * 100);
+            }
+
+            // AUTO-SWEEP ANIMATION
+            // Sweeps the handle from left (0%) to a maximum of 75% and back,
+            // giving a preview of both videos until the visitor drags it themselves.
+            const AUTO_MAX = 75;
+            const AUTO_SPEED = 0.25; // percentage points per animation frame
+            let autoPercentage = 0;
+            let autoDirection = 1;
+            let autoRAF = null;
+
+            function autoStep() {
+                autoPercentage += AUTO_SPEED * autoDirection;
+
+                if (autoPercentage >= AUTO_MAX) {
+                    autoPercentage = AUTO_MAX;
+                    autoDirection = -1;
+                } else if (autoPercentage <= 0) {
+                    autoPercentage = 0;
+                    autoDirection = 1;
+                }
+
+                setPosition(autoPercentage);
+                autoRAF = requestAnimationFrame(autoStep);
+            }
+
+            function stopAutoSweep() {
+                if (autoRAF !== null) {
+                    cancelAnimationFrame(autoRAF);
+                    autoRAF = null;
+                }
+            }
+
+            slider.style.cursor = 'col-resize';
+            slider.addEventListener('mousedown', (e) => { isActive = true; stopAutoSweep(); updateSlider(e); });
+            slider.addEventListener('touchstart', (e) => { isActive = true; stopAutoSweep(); updateSlider(e); });
+            document.addEventListener('mouseup', () => { isActive = false; });
+            document.addEventListener('touchend', () => { isActive = false; });
+            document.addEventListener('mousemove', updateSlider);
+            document.addEventListener('touchmove', updateSlider);
+
+            // Kick off the automatic sweep
+            autoRAF = requestAnimationFrame(autoStep);
+        }
+
+        // FIXTURE COUNTDOWNS
+        function initFixtureCountdowns() {
+            const cards = document.querySelectorAll('.fixture-card');
+            if (!cards.length) return;
+
+            function pad(n) {
+                return String(n).padStart(2, '0');
+            }
+
+            function tick() {
+                const now = Date.now();
+
+                cards.forEach(card => {
+                    const kickoff = new Date(card.dataset.kickoff).getTime();
+                    const diff = kickoff - now;
+
+                    if (diff <= 0) {
+                        card.classList.add('is-live');
+                        card.querySelector('.cd-days').textContent = '00';
+                        card.querySelector('.cd-hours').textContent = '00';
+                        card.querySelector('.cd-mins').textContent = '00';
+                        card.querySelector('.cd-secs').textContent = '00';
+                        return;
+                    }
+
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                    const mins = Math.floor((diff / (1000 * 60)) % 60);
+                    const secs = Math.floor((diff / 1000) % 60);
+
+                    card.querySelector('.cd-days').textContent = pad(days);
+                    card.querySelector('.cd-hours').textContent = pad(hours);
+                    card.querySelector('.cd-mins').textContent = pad(mins);
+                    card.querySelector('.cd-secs').textContent = pad(secs);
+                });
+            }
+
+            tick();
+            setInterval(tick, 1000);
+        }
+
+        // UTM TRACKING
+        function initUTMFields() {
+            const params = new URLSearchParams(window.location.search);
+            const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
+
+            const utms = {};
+            utmKeys.forEach(key => {
+                const fromUrl = params.get(key);
+                if (fromUrl) {
+                    utms[key] = fromUrl;
+                }
+            });
+
+            // Persist whatever we found so it survives a later page reload
+            // (e.g. the visitor lands via a campaign link but only fills in
+            // the form after browsing around for a while).
+            if (Object.keys(utms).length) {
+                sessionStorage.setItem('bb-utms', JSON.stringify(utms));
+            }
+
+            let stored = {};
+            try {
+                stored = JSON.parse(sessionStorage.getItem('bb-utms')) || {};
+            } catch (e) {
+                stored = {};
+            }
+
+            utmKeys.forEach(key => {
+                const value = stored[key] || '';
+                document.querySelectorAll(`input.utm-field[name="${key}"]`).forEach(input => {
+                    input.value = value;
+                });
+            });
+        }
+
+        // FLOATING CONTACT POPUP
+        // The floating popup and the footer's Ri figure should never both be
+        // visible at the same time — track both conditions and only show the
+        // popup once the 10s timer fired AND the footer figure is off-screen.
+        let riPopupTimerFired = false;
+        let footerRiVisible = false;
+        let riPopupUserClosed = false;
+
+        function updateRiPopupVisibility() {
+            const popup = document.getElementById('riPopup');
+            if (!popup) return;
+
+            const shouldShow = riPopupTimerFired && !footerRiVisible && !riPopupUserClosed;
+            popup.classList.toggle('show', shouldShow);
+        }
+
+        function initRiPopup() {
+            const popup = document.getElementById('riPopup');
+            if (!popup) return;
+
+            setTimeout(() => {
+                riPopupTimerFired = true;
+                updateRiPopupVisibility();
+            }, 10000);
+
+            const footerPhoto = document.querySelector('.contact-person img');
+            if (footerPhoto && 'IntersectionObserver' in window) {
+                const footerObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        footerRiVisible = entry.isIntersecting;
+                        updateRiPopupVisibility();
+                    });
+                }, { threshold: 0.15 });
+
+                footerObserver.observe(footerPhoto);
+            }
+        }
+
+        function closeRiPopup() {
+            riPopupUserClosed = true;
+            updateRiPopupVisibility();
+        }
+
+        // FOOTER CONTACT PHOTO REVEAL
+        function initContactPhotoReveal() {
+            const photo = document.querySelector('.contact-person img');
+            if (!photo || !('IntersectionObserver' in window)) {
+                if (photo) photo.classList.add('in-view');
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        photo.classList.add('in-view');
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(photo);
+        }
+
+        // FORM HANDLING
+        document.addEventListener('DOMContentLoaded', function() {
+            setLanguage(localStorage.getItem('bb-lang') || 'nl');
+            initUTMFields();
+            initSlider();
+            initFixtureCountdowns();
+            initContactPhotoReveal();
+            initRiPopup();
+
+            const proLeagueForm = document.getElementById('proLeagueForm');
+            const redDevilsForm = document.getElementById('redDevilsForm');
+            const vbrBrochureForm = document.getElementById('vbrBrochureForm');
+
+            const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/11005955/4hn5h0l/';
+
+            function submitToZapier(form, sourceLabel, redirectTo) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const data = Object.fromEntries(new FormData(form).entries());
+                    data.form_source = sourceLabel;
+                    data.submitted_at = new Date().toISOString();
+
+                    // Sent as x-www-form-urlencoded (not JSON): this is a CORS
+                    // "simple request", so the browser sends it directly without
+                    // a preflight OPTIONS call — which is what was silently
+                    // dropping the POST body before, leaving only the (empty)
+                    // querystring visible on the Zapier side.
+                    fetch(ZAPIER_WEBHOOK_URL, {
+                        method: 'POST',
+                        body: new URLSearchParams(data)
+                    }).catch(err => {
+                        console.error('Zapier webhook failed:', err);
+                    }).finally(() => {
+                        window.location.href = redirectTo;
+                    });
+                });
+            }
+
+            if (vbrBrochureForm) {
+                submitToZapier(vbrBrochureForm, 'VBR brochure popup', 'thank-you.html?source=brochure');
+            }
+
+            if (proLeagueForm) {
+                submitToZapier(proLeagueForm, 'Pro League contactformulier', 'thank-you.html');
+            }
+
+            if (redDevilsForm) {
+                submitToZapier(redDevilsForm, 'Red Devils contactformulier', 'thank-you.html');
+            }
+        });
+
+        // GTAG / ANALYTICS
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GTM-5KXZGF');
+    </script>
+</body>
+</html>

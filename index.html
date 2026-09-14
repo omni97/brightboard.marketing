@@ -621,15 +621,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             display: flex;
             align-items: flex-end;
             gap: 14px;
-            padding-left: 145px;
+            padding-left: 74px;
             min-height: 10px;
         }
 
         .contact-person img {
             position: absolute;
-            left: -6px;
+            z-index: 0;
+            left: -3px;
             bottom: 0;
-            height: 175px;
+            height: 88px;
             width: auto;
             object-fit: contain;
             filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.45));
@@ -645,6 +646,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .contact-person-info {
+            position: relative;
+            z-index: 1;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -1009,11 +1012,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .contact-person {
                 grid-column: 1;
                 justify-self: center;
-                padding-left: 110px;
+                padding-left: 55px;
             }
 
             .contact-person img {
-                height: 130px;
+                height: 65px;
             }
 
             .footer-meta {
@@ -1039,11 +1042,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
 
             .contact-person {
-                padding-left: 92px;
+                padding-left: 46px;
             }
 
             .contact-person img {
-                height: 108px;
+                height: 54px;
             }
 
             .contact-person-info {

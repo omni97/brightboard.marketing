@@ -1924,6 +1924,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         // PAGE NAVIGATION
         let brochureModalTimer = null;
+        let redDevilsFormBeingFilled = false;
 
         function showPage(pageName) {
             // Hide all pages
@@ -1945,10 +1946,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             // Scroll to top
             window.scrollTo(0, 0);
 
-            // Show the brochure lead-capture popup 15 seconds after landing on the Red Devils page
+            // Show the brochure lead-capture popup 15 seconds after landing on the
+            // Red Devils page — but not if the visitor is already filling in the
+            // contact form there, since interrupting them with a popup loses the lead.
             clearTimeout(brochureModalTimer);
+            redDevilsFormBeingFilled = false;
             if (pageName === 'red-devils') {
-                brochureModalTimer = setTimeout(openModal, 15000);
+                brochureModalTimer = setTimeout(() => {
+                    if (!redDevilsFormBeingFilled) openModal();
+                }, 15000);
             }
         }
 
@@ -2235,6 +2241,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const proLeagueForm = document.getElementById('proLeagueForm');
             const redDevilsForm = document.getElementById('redDevilsForm');
             const vbrBrochureForm = document.getElementById('vbrBrochureForm');
+
+            // Mark the Red Devils form as "being filled in" on first interaction,
+            // so the 15s brochure popup timer (see showPage) skips opening over it.
+            if (redDevilsForm) {
+                redDevilsForm.addEventListener('focusin', function() {
+                    redDevilsFormBeingFilled = true;
+                });
+            }
 
             const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/11005955/4hn5h0l/';
 

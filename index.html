@@ -1322,7 +1322,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .score-away {
-            color: var(--text-gray);
+            color: #22c55e;
         }
 
         .score-home.score-winner {
@@ -1353,6 +1353,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         #page-red-devils .score-display {
             color: var(--light-white);
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #page-red-devils .score-away {
+            color: #4ade80;
         }
 
         #page-red-devils .score-home.score-winner {
@@ -2206,6 +2210,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 const now = Date.now();
 
                 cards.forEach(card => {
+                    // Skip fixture cards that are already played (have fixture-card--played class)
+                    if (card.classList.contains('fixture-card--played')) {
+                        return;
+                    }
+
                     const kickoff = new Date(card.dataset.kickoff).getTime();
                     const diff = kickoff - now;
 

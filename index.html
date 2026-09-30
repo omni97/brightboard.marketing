@@ -1288,8 +1288,81 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: var(--text-gray);
         }
 
-        .fixture-card.is-live .cd-value {
+                .fixture-card.is-live .cd-value {
             color: #e63946;
+        }
+
+        /* Afgeronde wedstrijden */
+        .fixture-card--played {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.08));
+            border: 2px solid rgba(34, 197, 94, 0.4);
+        }
+
+        .fixture-score {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--dark-black);
+        }
+
+        .score-team {
+            min-width: 45px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .score-away {
+            color: var(--text-gray);
+        }
+
+        .score-home.score-winner {
+            color: #22c55e;
+        }
+
+        .score-separator {
+            color: var(--text-gray);
+            font-weight: 400;
+        }
+
+        .score-status {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #22c55e;
+            background: rgba(34, 197, 94, 0.2);
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        #page-red-devils .fixture-card--played {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1));
+            border: 2px solid rgba(34, 197, 94, 0.5);
+        }
+
+        #page-red-devils .score-display {
+            color: var(--light-white);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #page-red-devils .score-home.score-winner {
+            color: #4ade80;
+        }
+
+        #page-red-devils .score-status {
+            color: #4ade80;
+            background: rgba(74, 222, 128, 0.2);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .partner-logo img {
@@ -1547,16 +1620,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="content-block">
                     <h3 data-i18n="rd_h3_fixtures">Upcoming Red Devils Away Fixtures</h3>
                     <div class="fixtures-grid">
-                        <div class="fixture-card" data-kickoff="2026-09-25T20:45:00+01:00">
+                        <div class="fixture-card fixture-card--played" data-kickoff="2026-09-25T20:45:00+01:00">
                             <div class="fixture-flag"><img src="opponents/Italy-National-Football-Team-Logo.png" alt="Italy"></div>
                             <div class="fixture-match" data-i18n="fx_it_match">Italy vs Belgium</div>
                             <div class="fixture-meta" data-i18n="fx_it_meta">Italy &middot; 25 September 2026 &middot; 20:45 CET</div>
-                            <div class="fixture-countdown">
-                                <div class="cd-unit"><span class="cd-value cd-days">00</span><small data-i18n="cd_days">days</small></div>
-                                <div class="cd-unit"><span class="cd-value cd-hours">00</span><small data-i18n="cd_hrs">hrs</small></div>
-                                <div class="cd-unit"><span class="cd-value cd-mins">00</span><small data-i18n="cd_min">min</small></div>
-                                <div class="cd-unit"><span class="cd-value cd-secs">00</span><small data-i18n="cd_sec">sec</small></div>
+                            <div class="fixture-score">
+                                <div class="score-display">
+                                    <span class="score-team score-away">0</span>
+                                    <span class="score-separator">-</span>
+                                    <span class="score-team score-home score-winner">2</span>
+                                </div>
+                                <div class="score-status" data-i18n="match_won">GEWONNEN</div>
                             </div>
+                        </div>
                         </div>
                         <div class="fixture-card" data-kickoff="2026-10-05T20:45:00+01:00">
                             <div class="fixture-flag"><img src="opponents/Frankrijk-Logo.png" alt="France"></div>
@@ -1736,6 +1812,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 cd_hrs: 'uur',
                 cd_min: 'min',
                 cd_sec: 'sec',
+                match_won: 'REMPORTÉ',
+                match_won: 'GEWONNEN',
                 rd_partner_cta: "Laten we samenwerken!",
                 rd_h2_gettouch: 'Neem contact op',
                 form_firstname: 'Voornaam',
@@ -1862,6 +1940,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 cd_hrs: 'hrs',
                 cd_min: 'min',
                 cd_sec: 'sec',
+                match_won: 'WON',
                 rd_partner_cta: "Let's partner up!",
                 rd_h2_gettouch: 'Get in Touch',
                 form_firstname: 'First name',

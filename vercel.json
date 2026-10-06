@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/home",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ],
   "redirects": [

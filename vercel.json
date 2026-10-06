@@ -3,6 +3,14 @@
     {
       "source": "/thank-you",
       "destination": "/thank-you.html"
+    },
+    {
+      "source": "/pro-league",
+      "destination": "/pro-league.html"
+    },
+    {
+      "source": "/red-devils",
+      "destination": "/red-devils.html"
     }
   ]
 }

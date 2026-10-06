@@ -1369,6 +1369,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
+        .fixture-card--played .score-separator {
+            color: #22c55e;
+        }
+
+        #page-red-devils .fixture-card--played .score-separator {
+            color: #4ade80;
+        }
+
+        /* Verloren wedstrijden */
+        .fixture-card--lost,
+        #page-red-devils .fixture-card--lost {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.1));
+            border: 2px solid rgba(239, 68, 68, 0.5);
+        }
+
+        .fixture-card--lost .score-team,
+        .fixture-card--lost .score-separator,
+        .fixture-card--lost .score-status {
+            color: #ef4444;
+        }
+
+        #page-red-devils .fixture-card--lost .score-team,
+        #page-red-devils .fixture-card--lost .score-separator,
+        #page-red-devils .fixture-card--lost .score-status {
+            color: #f87171;
+        }
+
+        .fixture-card--lost .score-status,
+        #page-red-devils .fixture-card--lost .score-status {
+            background: rgba(248, 113, 113, 0.2);
+        }
+
         .partner-logo img {
             height: 60px;
             width: 140px;
@@ -1637,15 +1669,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="score-status" data-i18n="match_won">GEWONNEN</div>
                             </div>
                         </div>
-                        <div class="fixture-card" data-kickoff="2026-10-05T20:45:00+01:00">
+                        <div class="fixture-card fixture-card--played fixture-card--lost" data-kickoff="2026-10-05T20:45:00+01:00">
                             <div class="fixture-flag"><img src="opponents/Frankrijk-Logo.png" alt="France"></div>
                             <div class="fixture-match" data-i18n="fx_fr_match">France vs Belgium</div>
                             <div class="fixture-meta" data-i18n="fx_fr_meta">France &middot; 5 October 2026 &middot; 20:45 CET</div>
-                            <div class="fixture-countdown">
-                                <div class="cd-unit"><span class="cd-value cd-days">00</span><small data-i18n="cd_days">days</small></div>
-                                <div class="cd-unit"><span class="cd-value cd-hours">00</span><small data-i18n="cd_hrs">hrs</small></div>
-                                <div class="cd-unit"><span class="cd-value cd-mins">00</span><small data-i18n="cd_min">min</small></div>
-                                <div class="cd-unit"><span class="cd-value cd-secs">00</span><small data-i18n="cd_sec">sec</small></div>
+                            <div class="fixture-score">
+                                <div class="score-display">
+                                    <span class="score-team score-away">4</span>
+                                    <span class="score-separator">-</span>
+                                    <span class="score-team score-home">1</span>
+                                </div>
+                                <div class="score-status" data-i18n="match_lost">VERLOREN</div>
                             </div>
                         </div>
                         <div class="fixture-card" data-kickoff="2026-11-12T18:00:00+01:00">
@@ -1823,8 +1857,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 cd_hrs: 'uur',
                 cd_min: 'min',
                 cd_sec: 'sec',
-                match_won: 'REMPORTÉ',
                 match_won: 'GEWONNEN',
+                match_lost: 'VERLOREN',
                 rd_partner_cta: "Laten we samenwerken!",
                 rd_h2_gettouch: 'Neem contact op',
                 form_firstname: 'Voornaam',
@@ -1889,6 +1923,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 cd_hrs: 'h',
                 cd_min: 'min',
                 cd_sec: 'sec',
+                match_won: 'REMPORTÉ',
+                match_lost: 'PERDU',
                 rd_partner_cta: 'Devenons partenaires !',
                 rd_h2_gettouch: 'Contactez-nous',
                 form_firstname: 'Prénom',
@@ -1954,6 +1990,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 cd_min: 'min',
                 cd_sec: 'sec',
                 match_won: 'WON',
+                match_lost: 'LOST',
                 rd_partner_cta: "Let's partner up!",
                 rd_h2_gettouch: 'Get in Touch',
                 form_firstname: 'First name',

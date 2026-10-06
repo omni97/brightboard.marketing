@@ -125,6 +125,17 @@ def bake(text, strings):
             return m.group(1) + inner + m.group(5)
 
         text = pattern.sub(replace, text)
+
+    # Translated attributes: title (validation hint) and placeholder.
+    for attr in ("title", "placeholder"):
+        def replace_attr(m, attr=attr):
+            key = m.group(1)
+            if key not in strings:
+                return m.group(0)
+            value = html.escape(strings[key], quote=True)
+            return re.sub(r'\s%s="[^"]*"' % attr, lambda _: ' %s="%s"' % (attr, value), m.group(0), count=1)
+
+        text = re.sub(r'<[^>]*\sdata-i18n-%s="(\w+)"[^>]*>' % attr, replace_attr, text)
     return text
 
 
@@ -285,7 +296,7 @@ def build_sitemap():
 def main():
     translations = load_translations()
     for page_key, page in PAGES.items():
-        used = set(re.findall(r'data-i18n(?:-html)?="(\w+)"', read(page["src"])))
+        used = set(re.findall(r'data-i18n(?:-html|-title|-placeholder)?="(\w+)"', read(page["src"])))
         for lang in LANGS:
             missing = sorted(used - set(translations[lang]))
             if missing:

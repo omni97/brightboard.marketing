@@ -80,7 +80,9 @@ const translations = {
         rd_faq2_q: "Kan ik ook adverteren tijdens uitwedstrijden van de Rode Duivels?",
         rd_faq2_a: "Ja. Ook tijdens uitwedstrijden worden de advertenties van partners via VBR specifiek aan het Belgische publiek getoond, zonder kwaliteitsverlies.",
         rd_faq3_q: "Hoe word ik partner?",
-        rd_faq3_a: "Vul het contactformulier op deze pagina in of vraag de gratis brochure over VBR tijdens de Nations League aan. Je kunt ook rechtstreeks contact opnemen met Ri Verspecht (ri@brightboard.eu, +32 478 92 21 52)."
+        rd_faq3_a: "Vul het contactformulier op deze pagina in of vraag de gratis brochure over VBR tijdens de Nations League aan. Je kunt ook rechtstreeks contact opnemen met Ri Verspecht (ri@brightboard.eu, +32 478 92 21 52).",
+        form_phone_title: "Vul een geldig Belgisch telefoonnummer in (bv. 0478922152 of +32478922152)",
+        form_toelichting_placeholder: "Vertel ons meer over je interesse..."
     },
     fr: {
         nav_home: 'Accueil',
@@ -162,7 +164,9 @@ const translations = {
         rd_faq2_q: "Puis-je aussi faire de la publicité pendant les matchs à l'extérieur des Diables Rouges ?",
         rd_faq2_a: "Oui. Même lors des matchs à l'extérieur, les publicités des partenaires sont spécifiquement diffusées pour le public belge grâce au VBR, sans aucune perte de qualité.",
         rd_faq3_q: "Comment devenir partenaire ?",
-        rd_faq3_a: "Remplissez le formulaire de contact sur cette page ou demandez la brochure gratuite sur le VBR pendant la Ligue des Nations. Vous pouvez aussi contacter directement Ri Verspecht (ri@brightboard.eu, +32 478 92 21 52)."
+        rd_faq3_a: "Remplissez le formulaire de contact sur cette page ou demandez la brochure gratuite sur le VBR pendant la Ligue des Nations. Vous pouvez aussi contacter directement Ri Verspecht (ri@brightboard.eu, +32 478 92 21 52).",
+        form_phone_title: "Saisissez un numéro de téléphone belge valide (p. ex. 0478922152 ou +32478922152)",
+        form_toelichting_placeholder: "Dites-nous en plus sur votre intérêt..."
     },
     en: {
         nav_home: 'Home',
@@ -244,7 +248,9 @@ const translations = {
         rd_faq2_q: "Can I also advertise during the Red Devils' away matches?",
         rd_faq2_a: "Yes. Even during away matches, partners' ads are specifically shown to the Belgian audience through VBR, without any loss of quality.",
         rd_faq3_q: "How do I become a partner?",
-        rd_faq3_a: "Fill in the contact form on this page or request the free brochure on VBR during the Nations League. You can also contact Ri Verspecht (ri@brightboard.eu, +32 478 92 21 52) directly."
+        rd_faq3_a: "Fill in the contact form on this page or request the free brochure on VBR during the Nations League. You can also contact Ri Verspecht (ri@brightboard.eu, +32 478 92 21 52) directly.",
+        form_phone_title: "Enter a valid Belgian phone number (e.g. 0478922152 or +32478922152)",
+        form_toelichting_placeholder: "Tell us more about your interest..."
     }
 };
 
@@ -263,6 +269,15 @@ function setLanguage(lang) {
         if (translations[lang][key] !== undefined) {
             el.innerHTML = translations[lang][key];
         }
+    });
+
+    ['title', 'placeholder'].forEach(attr => {
+        document.querySelectorAll(`[data-i18n-${attr}]`).forEach(el => {
+            const key = el.getAttribute(`data-i18n-${attr}`);
+            if (translations[lang][key] !== undefined) {
+                el.setAttribute(attr, translations[lang][key]);
+            }
+        });
     });
 
     document.querySelectorAll('.lang-options [data-lang]').forEach(btn => {

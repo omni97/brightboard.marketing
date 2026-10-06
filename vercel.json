@@ -9,7 +9,8 @@
   "redirects": [
     { "source": "/pro-league.html", "destination": "/proleague", "permanent": true },
     { "source": "/pro-league", "destination": "/proleague", "permanent": true },
-    { "source": "/red-devils.html", "destination": "/reddevils", "permanent": true },
-    { "source": "/red-devils", "destination": "/reddevils", "permanent": true }
+    { "source": "/reddevils", "destination": "/rode-duivels", "permanent": true },
+    { "source": "/red-devils.html", "destination": "/rode-duivels", "permanent": true },
+    { "source": "/red-devils", "destination": "/rode-duivels", "permanent": true }
   ]
 }

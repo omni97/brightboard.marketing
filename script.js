@@ -217,7 +217,7 @@ function setLanguage(lang) {
         }
     });
 
-    document.querySelectorAll('.lang-options button').forEach(btn => {
+    document.querySelectorAll('.lang-options [data-lang]').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
     });
 
@@ -546,7 +546,8 @@ function initContactPhotoReveal() {
 
 // FORM HANDLING
 document.addEventListener('DOMContentLoaded', function() {
-    setLanguage(localStorage.getItem('bb-lang') || 'nl');
+    // Each language has its own URL (/, /fr/, /en/); the page's lang attribute says which one this is.
+    setLanguage(document.documentElement.lang || 'nl');
     initUTMFields();
     initSlider();
     initFixtureCountdowns();

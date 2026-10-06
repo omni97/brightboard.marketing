@@ -1,15 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.brightboard.marketing/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/"/>
+  </url>
+  <url>
+    <loc>https://www.brightboard.marketing/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/"/>
+  </url>
+  <url>
+    <loc>https://www.brightboard.marketing/en/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/"/>
   </url>
   <url>
     <loc>https://www.brightboard.marketing/proleague</loc>
-    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/proleague"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/proleague"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/proleague"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/proleague"/>
   </url>
   <url>
-    <loc>https://www.brightboard.marketing/reddevils</loc>
-    <lastmod>2026-10-06</lastmod>
+    <loc>https://www.brightboard.marketing/fr/proleague</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/proleague"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/proleague"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/proleague"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/proleague"/>
+  </url>
+  <url>
+    <loc>https://www.brightboard.marketing/en/proleague</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/proleague"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/proleague"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/proleague"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/proleague"/>
+  </url>
+  <url>
+    <loc>https://www.brightboard.marketing/rode-duivels</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/rode-duivels"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/diables-rouges"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/red-devils"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/rode-duivels"/>
+  </url>
+  <url>
+    <loc>https://www.brightboard.marketing/fr/diables-rouges</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/rode-duivels"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/diables-rouges"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/red-devils"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/rode-duivels"/>
+  </url>
+  <url>
+    <loc>https://www.brightboard.marketing/en/red-devils</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/rode-duivels"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/diables-rouges"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/red-devils"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/rode-duivels"/>
   </url>
 </urlset>

@@ -238,7 +238,9 @@ nav a.active {
     pointer-events: auto;
 }
 
-.lang-options button {
+.lang-options a {
+    display: block;
+    text-decoration: none;
     background: none;
     border: none;
     cursor: pointer;
@@ -252,12 +254,12 @@ nav a.active {
     transition: color 0.3s, background 0.3s;
 }
 
-.lang-options button:hover {
+.lang-options a:hover {
     color: var(--light-white);
     background: rgba(255, 255, 255, 0.08);
 }
 
-.lang-options button.active {
+.lang-options a.active {
     color: var(--light-white);
     background: var(--primary-orange);
 }

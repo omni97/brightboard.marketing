@@ -240,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
     <div class="thank-you-card">
-        <a href="/reddevils" class="logo">
+        <a href="/rode-duivels" class="logo">
             <img src="BB WIT.png" alt="BrightBoard Logo">
         </a>
         <div class="check-icon">&#10003;</div>
@@ -291,6 +291,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             document.getElementById('tyDesc').textContent = isBrochure
                 ? translations[lang].ty_desc
                 : translations[lang].ty_desc_generic;
+
+            // Send visitors back to the homepage in their own language.
+            document.querySelector('.back-link').href = { nl: '/home', fr: '/fr/', en: '/en/' }[lang];
 
             document.querySelectorAll('.lang-options button').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);

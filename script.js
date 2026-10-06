@@ -593,15 +593,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (vbrBrochureForm) {
-        submitToZapier(vbrBrochureForm, 'VBR brochure popup', 'thank-you.html?source=brochure');
+        submitToZapier(vbrBrochureForm, 'VBR brochure popup', '/thank-you?source=brochure');
     }
 
     if (proLeagueForm) {
-        submitToZapier(proLeagueForm, 'Pro League contactformulier', 'thank-you.html');
+        submitToZapier(proLeagueForm, 'Pro League contactformulier', '/thank-you');
     }
 
     if (redDevilsForm) {
-        submitToZapier(redDevilsForm, 'Red Devils contactformulier', 'thank-you.html');
+        submitToZapier(redDevilsForm, 'Red Devils contactformulier', '/thank-you');
     }
 });
 

@@ -67,14 +67,14 @@ PAGES = {
             "en": "Advertising with the Belgian Red Devils via VBR | BrightBoard",
         },
         "desc": {
-            "nl": "Breng je merk bij de fans van de Rode Duivels, ook tijdens uitwedstrijden. Met Virtual Boarding Replacement (VBR) ziet het Belgische tv-publiek jouw reclame op de LED-boarding.",
-            "fr": "Présentez votre marque aux supporters des Diables Rouges, même lors des matchs à l'extérieur. Grâce au Virtual Boarding Replacement (VBR), le public belge voit votre publicité sur les panneaux LED.",
-            "en": "Put your brand in front of Red Devils fans, even during away matches. With Virtual Boarding Replacement (VBR), the Belgian TV audience sees your ad on the LED boards.",
+            "nl": "Breng je merk bij de Belgische fans tijdens de uitwedstrijden van de Rode Duivels. Met Virtual Boarding Replacement (VBR) ziet het Belgische tv-publiek jouw reclame op de LED-boarding.",
+            "fr": "Présentez votre marque aux supporters belges pendant les matchs à l'extérieur des Diables Rouges. Grâce au Virtual Boarding Replacement (VBR), le public belge voit votre publicité sur les panneaux LED.",
+            "en": "Put your brand in front of Belgian fans during the Red Devils' away matches. With Virtual Boarding Replacement (VBR), the Belgian TV audience sees your ad on the LED boards.",
         },
         "service": {
-            "nl": ("Virtual Boarding Replacement (VBR) tijdens wedstrijden van de Rode Duivels", "Virtuele stadionreclame"),
-            "fr": ("Virtual Boarding Replacement (VBR) pendant les matchs des Diables Rouges", "Publicité virtuelle dans les stades"),
-            "en": ("Virtual Boarding Replacement (VBR) during Belgian Red Devils matches", "Virtual stadium advertising"),
+            "nl": ("Virtual Boarding Replacement (VBR) tijdens uitwedstrijden van de Rode Duivels", "Virtuele stadionreclame"),
+            "fr": ("Virtual Boarding Replacement (VBR) pendant les matchs à l'extérieur des Diables Rouges", "Publicité virtuelle dans les stades"),
+            "en": ("Virtual Boarding Replacement (VBR) during Belgian Red Devils away matches", "Virtual stadium advertising"),
         },
     },
 }

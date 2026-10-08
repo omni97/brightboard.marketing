@@ -144,7 +144,21 @@ const translations = {
         mock_err_text_hex: "Vul een geldige hexcode in voor de tekstkleur, bijvoorbeeld #FFFFFF.",
         mock_caption_live: "Live voorbeeld met watermerk. Download je mockup in hoge resolutie, zonder watermerk.",
         mock_watermark: "VOORBEELD",
-        mock_preparing: "Even geduld, je mockup wordt gemaakt…"
+        mock_preparing: "Even geduld, je mockup wordt gemaakt…",
+        cookie_title: "Cookies op deze website",
+        cookie_text: "We gebruiken cookies om te meten hoe de website gebruikt wordt (statistieken) en om onze advertenties te meten en te verbeteren (marketing). Die plaatsen we alleen met jouw toestemming. Noodzakelijke opslag, zoals je taalkeuze, gebruiken we altijd.",
+        cookie_accept: "Alles accepteren",
+        cookie_reject: "Alles weigeren",
+        cookie_settings: "Instellingen",
+        cookie_save: "Keuze opslaan",
+        cookie_necessary: "Noodzakelijk",
+        cookie_necessary_desc: "Nodig om de website te laten werken, zoals je taalkeuze en de formulieren.",
+        cookie_always: "Altijd actief",
+        cookie_statistics: "Statistieken",
+        cookie_statistics_desc: "Cijfers over hoe bezoekers de website gebruiken (Google Analytics).",
+        cookie_marketing: "Marketing",
+        cookie_marketing_desc: "Om onze advertenties te meten en af te stemmen, bijvoorbeeld via de Meta-pixel (Facebook en Instagram).",
+        cookie_settings_link: "Cookie-instellingen"
     },
     fr: {
         nav_home: 'Accueil',
@@ -290,7 +304,21 @@ const translations = {
         mock_err_text_hex: "Saisissez un code hexadécimal valide pour la couleur du texte, par exemple #FFFFFF.",
         mock_caption_live: "Aperçu en direct avec filigrane. Téléchargez votre maquette en haute résolution, sans filigrane.",
         mock_watermark: "APERÇU",
-        mock_preparing: "Un instant, votre maquette est en préparation…"
+        mock_preparing: "Un instant, votre maquette est en préparation…",
+        cookie_title: "Cookies sur ce site",
+        cookie_text: "Nous utilisons des cookies pour mesurer l'utilisation du site (statistiques) et pour mesurer et améliorer nos publicités (marketing). Nous ne les plaçons qu'avec votre consentement. Le stockage nécessaire, comme votre choix de langue, est toujours utilisé.",
+        cookie_accept: "Tout accepter",
+        cookie_reject: "Tout refuser",
+        cookie_settings: "Paramètres",
+        cookie_save: "Enregistrer mon choix",
+        cookie_necessary: "Nécessaires",
+        cookie_necessary_desc: "Indispensables au fonctionnement du site, comme votre choix de langue et les formulaires.",
+        cookie_always: "Toujours actifs",
+        cookie_statistics: "Statistiques",
+        cookie_statistics_desc: "Des chiffres sur la façon dont les visiteurs utilisent le site (Google Analytics).",
+        cookie_marketing: "Marketing",
+        cookie_marketing_desc: "Pour mesurer et adapter nos publicités, par exemple via le pixel Meta (Facebook et Instagram).",
+        cookie_settings_link: "Paramètres des cookies"
     },
     en: {
         nav_home: 'Home',
@@ -436,7 +464,21 @@ const translations = {
         mock_err_text_hex: "Enter a valid hex code for the text colour, for example #FFFFFF.",
         mock_caption_live: "Live preview with watermark. Download your mock-up in high resolution, without watermark.",
         mock_watermark: "PREVIEW",
-        mock_preparing: "One moment, your mock-up is being prepared…"
+        mock_preparing: "One moment, your mock-up is being prepared…",
+        cookie_title: "Cookies on this website",
+        cookie_text: "We use cookies to measure how the website is used (statistics) and to measure and improve our ads (marketing). We only set them with your consent. Necessary storage, such as your language choice, is always used.",
+        cookie_accept: "Accept all",
+        cookie_reject: "Reject all",
+        cookie_settings: "Settings",
+        cookie_save: "Save my choice",
+        cookie_necessary: "Necessary",
+        cookie_necessary_desc: "Needed for the website to work, such as your language choice and the forms.",
+        cookie_always: "Always on",
+        cookie_statistics: "Statistics",
+        cookie_statistics_desc: "Figures on how visitors use the website (Google Analytics).",
+        cookie_marketing: "Marketing",
+        cookie_marketing_desc: "To measure and tailor our ads, for example through the Meta pixel (Facebook and Instagram).",
+        cookie_settings_link: "Cookie settings"
     }
 };
 
@@ -791,6 +833,131 @@ function initContactPhotoReveal() {
     }, { threshold: 0.3 });
 
     observer.observe(photo);
+}
+
+// COOKIE BANNER
+// Consent is kept in localStorage ('bb-consent'). The inline script in each
+// page's <head> sets Google Consent Mode defaults (all denied) and only loads
+// Google Tag Manager once statistics or marketing cookies are accepted.
+const CONSENT_KEY = 'bb-consent';
+
+function readConsent() {
+    try { return JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch (e) { return null; }
+}
+
+function applyConsent(choice) {
+    const previous = readConsent();
+    const consent = { statistics: !!choice.statistics, marketing: !!choice.marketing, ts: Date.now() };
+    try { localStorage.setItem(CONSENT_KEY, JSON.stringify(consent)); } catch (e) { /* private mode */ }
+
+    gtag('consent', 'update', {
+        analytics_storage: consent.statistics ? 'granted' : 'denied',
+        ad_storage: consent.marketing ? 'granted' : 'denied',
+        ad_user_data: consent.marketing ? 'granted' : 'denied',
+        ad_personalization: consent.marketing ? 'granted' : 'denied'
+    });
+    window.dataLayer.push({ event: 'cookie_consent_update', consent_statistics: consent.statistics, consent_marketing: consent.marketing });
+
+    const withdrawn = previous && ((previous.statistics && !consent.statistics) || (previous.marketing && !consent.marketing));
+    if (withdrawn) {
+        // Remove the analytics/ad cookies already set and reload, so the tags stop.
+        document.cookie.split(';').map(c => c.split('=')[0].trim())
+            .filter(name => /^(_ga|_gid|_gat|_gcl|_fbp|_fbc)/.test(name))
+            .forEach(name => {
+                const host = location.hostname.replace(/^www\./, '');
+                ['', '; domain=' + host, '; domain=.' + host].forEach(domain => {
+                    document.cookie = name + '=; Max-Age=0; path=/' + domain;
+                });
+            });
+        location.reload();
+        return;
+    }
+    // Marketing newly allowed while the Meta pixel was blocked on this page: reload so it can load.
+    if (consent.marketing && window.bbMetaBlocked) {
+        location.reload();
+        return;
+    }
+    if (consent.statistics || consent.marketing) window.bbLoadGTM();
+}
+
+function initCookieBanner() {
+    const lang = translations[document.documentElement.lang] ? document.documentElement.lang : 'nl';
+    const t = key => translations[lang][key];
+
+    const banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-live', 'polite');
+    banner.setAttribute('aria-label', t('cookie_title'));
+    banner.innerHTML = `
+        <div class="cookie-inner">
+            <div class="cookie-copy">
+                <strong class="cookie-title"></strong>
+                <p class="cookie-text"></p>
+            </div>
+            <div class="cookie-options" hidden>
+                <label class="cookie-option">
+                    <input type="checkbox" checked disabled>
+                    <span><strong data-k="cookie_necessary"></strong> <em data-k="cookie_always"></em><br><small data-k="cookie_necessary_desc"></small></span>
+                </label>
+                <label class="cookie-option">
+                    <input type="checkbox" name="statistics">
+                    <span><strong data-k="cookie_statistics"></strong><br><small data-k="cookie_statistics_desc"></small></span>
+                </label>
+                <label class="cookie-option">
+                    <input type="checkbox" name="marketing">
+                    <span><strong data-k="cookie_marketing"></strong><br><small data-k="cookie_marketing_desc"></small></span>
+                </label>
+            </div>
+            <div class="cookie-buttons">
+                <button type="button" class="btn btn-secondary cookie-btn" data-action="settings"></button>
+                <button type="button" class="btn btn-secondary cookie-btn" data-action="save" hidden></button>
+                <button type="button" class="btn btn-secondary cookie-btn" data-action="reject"></button>
+                <button type="button" class="btn btn-primary cookie-btn" data-action="accept"></button>
+            </div>
+        </div>`;
+    banner.querySelector('.cookie-title').textContent = t('cookie_title');
+    banner.querySelector('.cookie-text').textContent = t('cookie_text');
+    banner.querySelectorAll('[data-k]').forEach(el => { el.textContent = t(el.dataset.k); });
+    const btn = action => banner.querySelector(`[data-action="${action}"]`);
+    btn('settings').textContent = t('cookie_settings');
+    btn('save').textContent = t('cookie_save');
+    btn('reject').textContent = t('cookie_reject');
+    btn('accept').textContent = t('cookie_accept');
+    document.body.appendChild(banner);
+
+    const options = banner.querySelector('.cookie-options');
+    const box = name => banner.querySelector(`input[name="${name}"]`);
+
+    const open = showSettings => {
+        const current = readConsent() || {};
+        box('statistics').checked = !!current.statistics;
+        box('marketing').checked = !!current.marketing;
+        options.hidden = !showSettings;
+        btn('settings').hidden = showSettings;
+        btn('save').hidden = !showSettings;
+        banner.classList.add('show');
+        document.body.classList.add('cookie-open');
+    };
+    const close = () => {
+        banner.classList.remove('show');
+        document.body.classList.remove('cookie-open');
+    };
+
+    btn('accept').addEventListener('click', () => { close(); applyConsent({ statistics: true, marketing: true }); });
+    btn('reject').addEventListener('click', () => { close(); applyConsent({ statistics: false, marketing: false }); });
+    btn('settings').addEventListener('click', () => open(true));
+    btn('save').addEventListener('click', () => {
+        close();
+        applyConsent({ statistics: box('statistics').checked, marketing: box('marketing').checked });
+    });
+
+    document.querySelectorAll('[data-cookie-settings]').forEach(link => {
+        link.addEventListener('click', e => { e.preventDefault(); open(true); });
+    });
+
+    const stored = readConsent();
+    if (!stored || !stored.ts || Date.now() - stored.ts > 182 * 864e5) open(false);
 }
 
 // LEADS
@@ -1185,6 +1352,7 @@ function initMockup() {
 document.addEventListener('DOMContentLoaded', function() {
     // Each language has its own URL (/, /fr/, /en/); the page's lang attribute says which one this is.
     setLanguage(document.documentElement.lang || 'nl');
+    initCookieBanner();
     initUTMFields();
     initSlider();
     initFixtureCountdowns();

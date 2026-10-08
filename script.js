@@ -121,14 +121,14 @@ const translations = {
         mock_color: "2. Kies de achtergrondkleur",
         mock_color_title: "Kies een kleur",
         mock_hex_title: "Of typ een hexcode, bv. #FF8C00",
-        mock_show: "Toon mockup",
+        mock_show: "Download in hoge resolutie",
         mock_caption_example: "Voorbeeld met het BrightBoard-logo",
-        mock_caption_yours: "Jouw mockup op de LED-boarding",
-        mock_download: "Download je mockup",
+        mock_caption_yours: "Je mockup zonder watermerk is gedownload.",
+        mock_download: "Opnieuw downloaden",
         mock_gate_title: "Bijna klaar!",
-        mock_gate_desc: "Vul je gegevens in en bekijk meteen je mockup.",
+        mock_gate_desc: "Vul je gegevens in en download je mockup in hoge resolutie, zonder watermerk.",
         mock_gate_consent: "Door je gegevens in te vullen, mag BrightBoard je contacteren over je mockup en de mogelijkheden voor jouw merk.",
-        mock_gate_submit: "Toon mijn mockup",
+        mock_gate_submit: "Download mijn mockup",
         mock_err_logo: "Upload eerst je logo.",
         mock_err_file: "Dit bestand kan niet gelezen worden. Kies een PNG, JPG, SVG of WEBP.",
         mock_err_hex: "Vul een geldige hexcode in, bijvoorbeeld #FF8C00.",
@@ -141,7 +141,10 @@ const translations = {
         mock_font: "Lettertype",
         mock_text_color: "Tekstkleur",
         mock_err_empty: "Upload je logo of vul een tekst in.",
-        mock_err_text_hex: "Vul een geldige hexcode in voor de tekstkleur, bijvoorbeeld #FFFFFF."
+        mock_err_text_hex: "Vul een geldige hexcode in voor de tekstkleur, bijvoorbeeld #FFFFFF.",
+        mock_caption_live: "Live voorbeeld met watermerk. Download je mockup in hoge resolutie, zonder watermerk.",
+        mock_watermark: "VOORBEELD",
+        mock_preparing: "Even geduld, je mockup wordt gemaakt…"
     },
     fr: {
         nav_home: 'Accueil',
@@ -264,14 +267,14 @@ const translations = {
         mock_color: "2. Choisissez la couleur de fond",
         mock_color_title: "Choisir une couleur",
         mock_hex_title: "Ou saisissez un code hexadécimal, p. ex. #FF8C00",
-        mock_show: "Afficher la maquette",
+        mock_show: "Télécharger en haute résolution",
         mock_caption_example: "Exemple avec le logo BrightBoard",
-        mock_caption_yours: "Votre maquette sur les panneaux LED",
-        mock_download: "Télécharger votre maquette",
+        mock_caption_yours: "Votre maquette sans filigrane a été téléchargée.",
+        mock_download: "Télécharger à nouveau",
         mock_gate_title: "Presque terminé !",
-        mock_gate_desc: "Complétez vos coordonnées et découvrez immédiatement votre maquette.",
+        mock_gate_desc: "Complétez vos coordonnées et téléchargez votre maquette en haute résolution, sans filigrane.",
         mock_gate_consent: "En complétant vos coordonnées, vous acceptez que BrightBoard vous contacte au sujet de votre maquette et des possibilités pour votre marque.",
-        mock_gate_submit: "Afficher ma maquette",
+        mock_gate_submit: "Télécharger ma maquette",
         mock_err_logo: "Téléchargez d'abord votre logo.",
         mock_err_file: "Ce fichier ne peut pas être lu. Choisissez un PNG, JPG, SVG ou WEBP.",
         mock_err_hex: "Saisissez un code hexadécimal valide, par exemple #FF8C00.",
@@ -284,7 +287,10 @@ const translations = {
         mock_font: "Police",
         mock_text_color: "Couleur du texte",
         mock_err_empty: "Téléchargez votre logo ou saisissez un texte.",
-        mock_err_text_hex: "Saisissez un code hexadécimal valide pour la couleur du texte, par exemple #FFFFFF."
+        mock_err_text_hex: "Saisissez un code hexadécimal valide pour la couleur du texte, par exemple #FFFFFF.",
+        mock_caption_live: "Aperçu en direct avec filigrane. Téléchargez votre maquette en haute résolution, sans filigrane.",
+        mock_watermark: "APERÇU",
+        mock_preparing: "Un instant, votre maquette est en préparation…"
     },
     en: {
         nav_home: 'Home',
@@ -407,14 +413,14 @@ const translations = {
         mock_color: "2. Pick the background colour",
         mock_color_title: "Pick a colour",
         mock_hex_title: "Or type a hex code, e.g. #FF8C00",
-        mock_show: "Show mock-up",
+        mock_show: "Download in high resolution",
         mock_caption_example: "Example with the BrightBoard logo",
-        mock_caption_yours: "Your mock-up on the LED boarding",
-        mock_download: "Download your mock-up",
+        mock_caption_yours: "Your mock-up without watermark has been downloaded.",
+        mock_download: "Download again",
         mock_gate_title: "Almost there!",
-        mock_gate_desc: "Fill in your details to see your mock-up straight away.",
+        mock_gate_desc: "Fill in your details and download your mock-up in high resolution, without watermark.",
         mock_gate_consent: "By filling in your details, you agree that BrightBoard may contact you about your mock-up and the options for your brand.",
-        mock_gate_submit: "Show my mock-up",
+        mock_gate_submit: "Download my mock-up",
         mock_err_logo: "Upload your logo first.",
         mock_err_file: "This file can't be read. Choose a PNG, JPG, SVG or WEBP.",
         mock_err_hex: "Enter a valid hex code, for example #FF8C00.",
@@ -427,7 +433,10 @@ const translations = {
         mock_font: "Font",
         mock_text_color: "Text colour",
         mock_err_empty: "Upload your logo or enter some text.",
-        mock_err_text_hex: "Enter a valid hex code for the text colour, for example #FFFFFF."
+        mock_err_text_hex: "Enter a valid hex code for the text colour, for example #FFFFFF.",
+        mock_caption_live: "Live preview with watermark. Download your mock-up in high resolution, without watermark.",
+        mock_watermark: "PREVIEW",
+        mock_preparing: "One moment, your mock-up is being prepared…"
     }
 };
 
@@ -856,14 +865,15 @@ const mockupFontCss = (font, size) => `${font.weight} ${size}px "${font.family}"
 
 // One unit — the logo, the text, or the logo followed by the text — repeats
 // along the whole board. Without text it looks exactly like the logo-only version.
-function drawMockupBanner(logo, color, text) {
+function drawMockupBanner(logo, color, text, scale = 1) {
     const banner = document.createElement('canvas');
-    banner.width = MOCKUP.bannerWidth;
-    banner.height = MOCKUP.bannerHeight;
+    banner.width = MOCKUP.bannerWidth * scale;
+    banner.height = MOCKUP.bannerHeight * scale;
     const ctx = banner.getContext('2d');
-    const H = banner.height;
+    ctx.scale(scale, scale);
+    const H = MOCKUP.bannerHeight;
     ctx.fillStyle = color;
-    ctx.fillRect(0, 0, banner.width, H);
+    ctx.fillRect(0, 0, MOCKUP.bannerWidth, H);
 
     const items = [];
     let gap = 140;
@@ -914,7 +924,7 @@ function drawMockupBanner(logo, color, text) {
     if (!items.length) return banner;
     const inner = 60; // between the logo and the text
     const unit = items.reduce((sum, item) => sum + item.w, 0) + inner * (items.length - 1);
-    for (let x = 60; x < banner.width; x += unit + gap) {
+    for (let x = 60; x < MOCKUP.bannerWidth; x += unit + gap) {
         let cx = x;
         items.forEach(item => {
             item.draw(cx);
@@ -924,28 +934,57 @@ function drawMockupBanner(logo, color, text) {
     return banner;
 }
 
-function renderMockup(canvas, layers, banner) {
-    const ctx = canvas.getContext('2d');
+function renderMockup(canvas, layers, banner, options = {}) {
+    const s = options.scale || 1;
     const m = MOCKUP;
     const u = x => m.u.a * x / (m.u.g * x + 1);
+    canvas.width = m.width * s;
+    canvas.height = m.height * s;
+    const ctx = canvas.getContext('2d');
+    ctx.imageSmoothingQuality = 'high';
 
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.drawImage(layers.photo, 0, 0);
+    ctx.drawImage(layers.photo, 0, 0, m.width * s, m.height * s);
 
-    for (let x = 0; x < m.width; x++) {
-        const t = (x + 0.5) / m.width;
+    for (let X = 0; X < m.width * s; X++) {
+        const x = X / s;
+        const t = (x + 0.5 / s) / m.width;
         const top = m.top[0] + (m.top[1] - m.top[0]) * t;
         const bottom = m.bottom[0] + (m.bottom[1] - m.bottom[0]) * t;
         const u0 = u(x);
-        const u1 = u(x + 1);
-        ctx.drawImage(banner, u0, 0, u1 - u0, m.bannerHeight, x, top, 1, bottom - top);
+        const u1 = u(x + 1 / s);
+        ctx.drawImage(banner, u0 * s, 0, (u1 - u0) * s, m.bannerHeight * s, X, top * s, 1, (bottom - top) * s);
     }
 
     // The net lightens the dark board but barely touches bright LED pixels.
     ctx.globalCompositeOperation = 'lighten';
-    ctx.drawImage(layers.net, m.net.x, m.net.y);
+    ctx.drawImage(layers.net, m.net.x * s, m.net.y * s, layers.net.width * s, layers.net.height * s);
     ctx.globalCompositeOperation = 'source-over';
-    ctx.drawImage(layers.front, m.front.x, m.front.y);
+    ctx.drawImage(layers.front, m.front.x * s, m.front.y * s, layers.front.width * s, layers.front.height * s);
+
+    if (options.watermark) drawMockupWatermark(ctx, canvas.width, canvas.height, options.watermark);
+}
+
+// Diagonal "BRIGHTBOARD · PREVIEW" pattern over the live preview.
+function drawMockupWatermark(ctx, w, h, label) {
+    const text = 'BRIGHTBOARD · ' + label;
+    const size = Math.round(w / 40);
+    ctx.save();
+    ctx.translate(w / 2, h / 2);
+    ctx.rotate(-Math.PI / 9);
+    ctx.font = `900 ${size}px "Arial Black", Arial, sans-serif`;
+    ctx.textBaseline = 'middle';
+    ctx.lineWidth = Math.max(1, size / 14);
+    const step = ctx.measureText(text).width + size * 3;
+    const rowH = size * 3.2;
+    for (let row = 0, y = -h; y < h; y += rowH, row++) {
+        for (let x = -w - (row % 2) * step / 2; x < w; x += step) {
+            ctx.strokeStyle = 'rgba(0, 0, 0, 0.18)';
+            ctx.strokeText(text, x, y);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.32)';
+            ctx.fillText(text, x, y);
+        }
+    }
+    ctx.restore();
 }
 
 function normalizeHex(value) {
@@ -976,24 +1015,63 @@ function initMockup() {
     const leadForm = document.getElementById('mockupLeadForm');
 
     let layers = null;
+    let example = null;
     let logo = null;
     let logoName = '';
     let downloadUrl = null;
+    let lastBg = '#0A0A0A';
+    let lastTextColor = '#FFFFFF';
+    let renderToken = 0;
+    let renderQueued = false;
 
     const isUnlocked = () => {
         try { return localStorage.getItem(MOCKUP_UNLOCKED_KEY) === '1'; } catch (e) { return false; }
     };
     const setError = msg => { error.textContent = msg || ''; };
 
+    const currentText = () => ({
+        value: textInput.value.trim(),
+        font: fontSelect.value,
+        color: normalizeHex(textHexInput.value)
+    });
+
+    // The banner from the current settings. While a hex code is half typed,
+    // the last valid colour is used. Without logo or text: the BrightBoard example.
+    async function buildBanner(scale) {
+        lastBg = normalizeHex(hexInput.value) || lastBg;
+        const text = currentText();
+        lastTextColor = text.color || lastTextColor;
+        if (text.value && document.fonts) {
+            const font = MOCKUP_FONTS[text.font] || MOCKUP_FONTS.montserrat;
+            try { await document.fonts.load(mockupFontCss(font, 60), text.value); } catch (e) { /* falls back to a system font */ }
+        }
+        if (!logo && !text.value) return drawMockupBanner(example, lastBg, null, scale);
+        return drawMockupBanner(logo, lastBg, { value: text.value, font: text.font, color: lastTextColor }, scale);
+    }
+
+    // Live preview (with watermark) after every change; quick successive changes
+    // (typing, dragging the colour wheel) are bundled into one render.
+    function scheduleRender() {
+        if (renderQueued || !layers) return;
+        renderQueued = true;
+        setTimeout(async () => {
+            renderQueued = false;
+            const token = ++renderToken;
+            const banner = await buildBanner(1);
+            if (token !== renderToken) return;
+            renderMockup(canvas, layers, banner, { watermark: t('mock_watermark') });
+        }, 30);
+    }
+
     Promise.all([
         loadImage('/mockup/stadion.jpg'),
         loadImage('/mockup/net.png'),
         loadImage('/mockup/voorgrond.png'),
         loadImage('/BB WIT.png')
-    ]).then(([photo, net, front, example]) => {
+    ]).then(([photo, net, front, exampleLogo]) => {
         layers = { photo, net, front };
-        // Teaser: the BrightBoard logo until the visitor shows their own.
-        renderMockup(canvas, layers, drawMockupBanner(example, '#0A0A0A'));
+        example = exampleLogo;
+        scheduleRender();
     }).catch(err => console.error('Mock-up layers failed to load:', err));
 
     fileInput.addEventListener('change', () => {
@@ -1005,10 +1083,12 @@ function initMockup() {
             logo = img;
             logoName = file.name;
             fileName.textContent = file.name;
+            scheduleRender();
         }).catch(() => {
             logo = null;
             fileName.textContent = t('mock_logo_none');
             setError(t('mock_err_file'));
+            scheduleRender();
         });
     });
 
@@ -1017,42 +1097,43 @@ function initMockup() {
         picker.addEventListener('input', () => {
             field.value = picker.value.toUpperCase();
             setError('');
+            scheduleRender();
         });
         field.addEventListener('input', () => {
             const hex = normalizeHex(field.value);
             if (hex) {
                 picker.value = hex.toLowerCase();
                 setError('');
+                scheduleRender();
             }
         });
     };
     syncColor(colorInput, hexInput);
     syncColor(textColorInput, textHexInput);
+    textInput.addEventListener('input', scheduleRender);
+    fontSelect.addEventListener('change', scheduleRender);
 
-    const currentText = () => ({
-        value: textInput.value.trim(),
-        font: fontSelect.value,
-        color: normalizeHex(textHexInput.value)
-    });
-
-    async function show() {
-        const hex = normalizeHex(hexInput.value);
-        const text = currentText();
-        if (!layers) return;
-        if (text.value && document.fonts) {
-            const font = MOCKUP_FONTS[text.font] || MOCKUP_FONTS.montserrat;
-            try { await document.fonts.load(mockupFontCss(font, 60), text.value); } catch (e) { /* falls back to a system font */ }
-        }
-        renderMockup(canvas, layers, drawMockupBanner(logo, hex, text));
-        caption.textContent = t('mock_caption_yours');
-        canvas.toBlob(blob => {
+    // High-resolution download (2x, no watermark), as JPG: a 2244 x 1240 PNG
+    // is ~5 MB and slow to encode; a JPG is a fraction of that.
+    async function downloadHighRes() {
+        if (!layers || showBtn.disabled) return;
+        const label = showBtn.textContent;
+        showBtn.disabled = true;
+        showBtn.textContent = t('mock_preparing');
+        const banner = await buildBanner(2);
+        const out = document.createElement('canvas');
+        renderMockup(out, layers, banner, { scale: 2 });
+        out.toBlob(blob => {
+            showBtn.disabled = false;
+            showBtn.textContent = label;
             if (!blob) return;
             if (downloadUrl) URL.revokeObjectURL(downloadUrl);
             downloadUrl = URL.createObjectURL(blob);
             download.href = downloadUrl;
             download.hidden = false;
-        }, 'image/png');
-        canvas.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            download.click();
+            caption.textContent = t('mock_caption_yours');
+        }, 'image/jpeg', 0.92);
     }
 
     const openGate = () => {
@@ -1072,7 +1153,7 @@ function initMockup() {
         if (!normalizeHex(hexInput.value)) return setError(t('mock_err_hex'));
         if (text.value && !text.color) return setError(t('mock_err_text_hex'));
         setError('');
-        if (isUnlocked()) show(); else openGate();
+        if (isUnlocked()) downloadHighRes(); else openGate();
     });
 
     document.getElementById('mockupModalClose').addEventListener('click', closeGate);
@@ -1096,7 +1177,7 @@ function initMockup() {
         try { localStorage.setItem(MOCKUP_UNLOCKED_KEY, '1'); } catch (err) { /* private mode: ask again next time */ }
 
         closeGate();
-        show();
+        downloadHighRes();
     });
 }
 

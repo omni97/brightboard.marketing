@@ -182,12 +182,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <p class="mockup-error" id="mockupError" role="alert"></p>
-                        <button type="button" class="btn btn-primary" id="mockupShow" data-i18n="mock_show">Show mock-up</button>
+                        <button type="button" class="btn btn-primary" id="mockupShow" data-i18n="mock_show">Download in high resolution</button>
                     </div>
                     <figure class="mockup-preview">
                         <canvas id="mockupCanvas" width="1122" height="620"></canvas>
-                        <figcaption id="mockupCaption" data-i18n="mock_caption_example">Example with the BrightBoard logo</figcaption>
-                        <a class="btn btn-primary mockup-download" id="mockupDownload" download="brightboard-mockup.png" hidden data-i18n="mock_download">Download your mock-up</a>
+                        <figcaption id="mockupCaption" data-i18n="mock_caption_live">Live preview with watermark. Download your mock-up in high resolution, without watermark.</figcaption>
+                        <a class="btn btn-primary mockup-download" id="mockupDownload" download="brightboard-mockup.jpg" hidden data-i18n="mock_download">Download again</a>
                     </figure>
                 </div>
             </div>
@@ -251,7 +251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="modal-content">
             <span class="modal-close" id="mockupModalClose">&times;</span>
             <h2 style="margin-bottom: 14px;" data-i18n="mock_gate_title">Almost there!</h2>
-            <p style="margin-bottom: 24px;" data-i18n="mock_gate_desc">Fill in your details to see your mock-up straight away.</p>
+            <p style="margin-bottom: 24px;" data-i18n="mock_gate_desc">Fill in your details and download your mock-up in high resolution, without watermark.</p>
             <form id="mockupLeadForm">
                 <input type="hidden" name="utm_source" class="utm-field">
                 <input type="hidden" name="utm_medium" class="utm-field">
@@ -268,8 +268,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <label class="required" data-i18n="form_email">E-mail address</label>
                     <input type="email" name="email" autocomplete="email" required>
                 </div>
+                <div class="form-group">
+                    <label class="required" data-i18n="form_company">Company name</label>
+                    <input type="text" name="company" autocomplete="organization" required>
+                </div>
                 <p class="mockup-consent" data-i18n="mock_gate_consent">By filling in your details, you agree that BrightBoard may contact you about your mock-up and the options for your brand.</p>
-                <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="mock_gate_submit">Show my mock-up</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="mock_gate_submit">Download my mock-up</button>
             </form>
         </div>
     </div>

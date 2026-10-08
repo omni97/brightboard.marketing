@@ -182,12 +182,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                         <p class="mockup-error" id="mockupError" role="alert"></p>
-                        <button type="button" class="btn btn-primary" id="mockupShow" data-i18n="mock_show">Afficher la maquette</button>
+                        <button type="button" class="btn btn-primary" id="mockupShow" data-i18n="mock_show">Télécharger en haute résolution</button>
                     </div>
                     <figure class="mockup-preview">
                         <canvas id="mockupCanvas" width="1122" height="620"></canvas>
-                        <figcaption id="mockupCaption" data-i18n="mock_caption_example">Exemple avec le logo BrightBoard</figcaption>
-                        <a class="btn btn-primary mockup-download" id="mockupDownload" download="brightboard-mockup.png" hidden data-i18n="mock_download">Télécharger votre maquette</a>
+                        <figcaption id="mockupCaption" data-i18n="mock_caption_live">Aperçu en direct avec filigrane. Téléchargez votre maquette en haute résolution, sans filigrane.</figcaption>
+                        <a class="btn btn-primary mockup-download" id="mockupDownload" download="brightboard-mockup.jpg" hidden data-i18n="mock_download">Télécharger à nouveau</a>
                     </figure>
                 </div>
             </div>
@@ -251,7 +251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="modal-content">
             <span class="modal-close" id="mockupModalClose">&times;</span>
             <h2 style="margin-bottom: 14px;" data-i18n="mock_gate_title">Presque terminé !</h2>
-            <p style="margin-bottom: 24px;" data-i18n="mock_gate_desc">Complétez vos coordonnées et découvrez immédiatement votre maquette.</p>
+            <p style="margin-bottom: 24px;" data-i18n="mock_gate_desc">Complétez vos coordonnées et téléchargez votre maquette en haute résolution, sans filigrane.</p>
             <form id="mockupLeadForm">
                 <input type="hidden" name="utm_source" class="utm-field">
                 <input type="hidden" name="utm_medium" class="utm-field">
@@ -268,8 +268,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <label class="required" data-i18n="form_email">Adresse e-mail</label>
                     <input type="email" name="email" autocomplete="email" required>
                 </div>
+                <div class="form-group">
+                    <label class="required" data-i18n="form_company">Nom de l'entreprise</label>
+                    <input type="text" name="company" autocomplete="organization" required>
+                </div>
                 <p class="mockup-consent" data-i18n="mock_gate_consent">En complétant vos coordonnées, vous acceptez que BrightBoard vous contacte au sujet de votre maquette et des possibilités pour votre marque.</p>
-                <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="mock_gate_submit">Afficher ma maquette</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="mock_gate_submit">Télécharger ma maquette</button>
             </form>
         </div>
     </div>

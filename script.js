@@ -113,7 +113,7 @@ const translations = {
         home_faq4_q: "Wat is het verschil tussen LED-boarding en VBR?",
         home_faq4_a: "Met LED-boarding staat jouw reclame op de borden in het stadion, zichtbaar voor de supporters ter plaatse en de kijkers thuis. Met VBR (Virtual Boarding Replacement) wordt de reclame op de borden virtueel vervangen in de tv-uitzending: zo ziet het Belgische publiek jouw advertentie tijdens de uitwedstrijden van de Rode Duivels.",
         mock_h2: "Bekijk jouw logo op de LED-boarding",
-        mock_p: "Upload je logo, kies je achtergrondkleur en zie meteen hoe jouw merk eruitziet op de LED-boarding in een Pro League-stadion.",
+        mock_p: "Upload je logo, kies je kleuren, voeg eventueel een tekst toe en zie meteen hoe jouw merk eruitziet op de LED-boarding in een Pro League-stadion.",
         mock_logo: "1. Upload je logo",
         mock_logo_btn: "Kies een bestand",
         mock_logo_none: "Nog geen logo gekozen",
@@ -123,7 +123,7 @@ const translations = {
         mock_hex_title: "Of typ een hexcode, bv. #FF8C00",
         mock_show: "Toon mockup",
         mock_caption_example: "Voorbeeld met het BrightBoard-logo",
-        mock_caption_yours: "Jouw logo op de LED-boarding",
+        mock_caption_yours: "Jouw mockup op de LED-boarding",
         mock_download: "Download je mockup",
         mock_gate_title: "Bijna klaar!",
         mock_gate_desc: "Vul je gegevens in en bekijk meteen je mockup.",
@@ -135,7 +135,13 @@ const translations = {
         nav_mockup: "Gratis mockup",
         mock_h1: "Jouw logo op LED-boarding",
         mock_cta: "Probeer de gratis mockup →",
-        mock_h2_faq: "Veelgestelde vragen over reclame op LED-boarding"
+        mock_h2_faq: "Veelgestelde vragen over reclame op LED-boarding",
+        mock_text: "3. Voeg tekst toe (optioneel)",
+        mock_text_placeholder: "Bv. je slogan of website",
+        mock_font: "Lettertype",
+        mock_text_color: "Tekstkleur",
+        mock_err_empty: "Upload je logo of vul een tekst in.",
+        mock_err_text_hex: "Vul een geldige hexcode in voor de tekstkleur, bijvoorbeeld #FFFFFF."
     },
     fr: {
         nav_home: 'Accueil',
@@ -250,7 +256,7 @@ const translations = {
         home_faq4_q: "Quelle est la différence entre les panneaux LED et le VBR ?",
         home_faq4_a: "Avec les panneaux LED, votre publicité apparaît sur les panneaux du stade, visible pour les supporters sur place et les téléspectateurs à la maison. Avec le VBR (Virtual Boarding Replacement), la publicité des panneaux est remplacée virtuellement dans la retransmission télévisée : le public belge voit ainsi votre publicité pendant les matchs à l'extérieur des Diables Rouges.",
         mock_h2: "Voyez votre logo sur les panneaux LED",
-        mock_p: "Téléchargez votre logo, choisissez votre couleur de fond et découvrez immédiatement votre marque sur les panneaux LED d'un stade de Pro League.",
+        mock_p: "Téléchargez votre logo, choisissez vos couleurs, ajoutez éventuellement un texte et découvrez immédiatement votre marque sur les panneaux LED d'un stade de Pro League.",
         mock_logo: "1. Téléchargez votre logo",
         mock_logo_btn: "Choisir un fichier",
         mock_logo_none: "Aucun logo choisi",
@@ -260,7 +266,7 @@ const translations = {
         mock_hex_title: "Ou saisissez un code hexadécimal, p. ex. #FF8C00",
         mock_show: "Afficher la maquette",
         mock_caption_example: "Exemple avec le logo BrightBoard",
-        mock_caption_yours: "Votre logo sur les panneaux LED",
+        mock_caption_yours: "Votre maquette sur les panneaux LED",
         mock_download: "Télécharger votre maquette",
         mock_gate_title: "Presque terminé !",
         mock_gate_desc: "Complétez vos coordonnées et découvrez immédiatement votre maquette.",
@@ -272,7 +278,13 @@ const translations = {
         nav_mockup: "Maquette gratuite",
         mock_h1: "Votre logo sur panneaux LED",
         mock_cta: "Essayez la maquette gratuite →",
-        mock_h2_faq: "Questions fréquentes sur la publicité sur panneaux LED"
+        mock_h2_faq: "Questions fréquentes sur la publicité sur panneaux LED",
+        mock_text: "3. Ajoutez un texte (facultatif)",
+        mock_text_placeholder: "P. ex. votre slogan ou site web",
+        mock_font: "Police",
+        mock_text_color: "Couleur du texte",
+        mock_err_empty: "Téléchargez votre logo ou saisissez un texte.",
+        mock_err_text_hex: "Saisissez un code hexadécimal valide pour la couleur du texte, par exemple #FFFFFF."
     },
     en: {
         nav_home: 'Home',
@@ -387,7 +399,7 @@ const translations = {
         home_faq4_q: "What is the difference between LED boarding and VBR?",
         home_faq4_a: "With LED boarding, your ad appears on the boards in the stadium, visible to fans on site and viewers at home. With VBR (Virtual Boarding Replacement), the advertising on the boards is virtually replaced in the TV broadcast, so the Belgian audience sees your ad during the Red Devils' away matches.",
         mock_h2: "See your logo on the LED boarding",
-        mock_p: "Upload your logo, pick your background colour and instantly see your brand on the LED boarding of a Pro League stadium.",
+        mock_p: "Upload your logo, pick your colours, add some text if you like and instantly see your brand on the LED boarding of a Pro League stadium.",
         mock_logo: "1. Upload your logo",
         mock_logo_btn: "Choose a file",
         mock_logo_none: "No logo chosen yet",
@@ -397,7 +409,7 @@ const translations = {
         mock_hex_title: "Or type a hex code, e.g. #FF8C00",
         mock_show: "Show mock-up",
         mock_caption_example: "Example with the BrightBoard logo",
-        mock_caption_yours: "Your logo on the LED boarding",
+        mock_caption_yours: "Your mock-up on the LED boarding",
         mock_download: "Download your mock-up",
         mock_gate_title: "Almost there!",
         mock_gate_desc: "Fill in your details to see your mock-up straight away.",
@@ -409,7 +421,13 @@ const translations = {
         nav_mockup: "Free mock-up",
         mock_h1: "Your logo on LED boarding",
         mock_cta: "Try the free mock-up →",
-        mock_h2_faq: "Frequently asked questions about LED boarding advertising"
+        mock_h2_faq: "Frequently asked questions about LED boarding advertising",
+        mock_text: "3. Add text (optional)",
+        mock_text_placeholder: "E.g. your slogan or website",
+        mock_font: "Font",
+        mock_text_color: "Text colour",
+        mock_err_empty: "Upload your logo or enter some text.",
+        mock_err_text_hex: "Enter a valid hex code for the text colour, for example #FFFFFF."
     }
 };
 
@@ -810,26 +828,88 @@ function loadImage(src) {
     });
 }
 
-function drawMockupBanner(logo, color) {
+// Fonts for the optional banner text (self-hosted, see /mockup/fonts.css).
+const MOCKUP_FONTS = {
+    montserrat: { family: 'Montserrat', weight: 800 },
+    anton: { family: 'Anton', weight: 400 },
+    bebas: { family: 'Bebas Neue', weight: 400 },
+    oswald: { family: 'Oswald', weight: 700 },
+    orbitron: { family: 'Orbitron', weight: 800 },
+    pixel: { family: 'Press Start 2P', weight: 400 },
+    playfair: { family: 'Playfair Display', weight: 700 },
+    slab: { family: 'Roboto Slab', weight: 700 },
+    pacifico: { family: 'Pacifico', weight: 400 },
+    marker: { family: 'Permanent Marker', weight: 400 }
+};
+
+const mockupFontCss = (font, size) => `${font.weight} ${size}px "${font.family}"`;
+
+// One unit — the logo, the text, or the logo followed by the text — repeats
+// along the whole board. Without text it looks exactly like the logo-only version.
+function drawMockupBanner(logo, color, text) {
     const banner = document.createElement('canvas');
     banner.width = MOCKUP.bannerWidth;
     banner.height = MOCKUP.bannerHeight;
     const ctx = banner.getContext('2d');
+    const H = banner.height;
     ctx.fillStyle = color;
-    ctx.fillRect(0, 0, banner.width, banner.height);
+    ctx.fillRect(0, 0, banner.width, H);
 
-    // Fit the logo to the board height; very wide logos are capped in width.
-    const lw = logo.naturalWidth || logo.width || 300;
-    const lh = logo.naturalHeight || logo.height || 100;
-    let h = banner.height * 0.62;
-    let w = lw * h / lh;
-    if (w > 640) {
-        w = 640;
-        h = lh * w / lw;
+    const items = [];
+    let gap = 140;
+
+    if (logo) {
+        // Fit the logo to the board height; very wide logos are capped in width.
+        const lw = logo.naturalWidth || logo.width || 300;
+        const lh = logo.naturalHeight || logo.height || 100;
+        let h = H * 0.62;
+        let w = lw * h / lh;
+        if (w > 640) {
+            w = 640;
+            h = lh * w / lw;
+        }
+        gap = Math.max(110, h * 1.6);
+        items.push({ w, draw: x => ctx.drawImage(logo, x, (H - h) / 2, w, h) });
     }
-    const gap = Math.max(110, h * 1.6);
-    for (let x = 60; x < banner.width; x += w + gap) {
-        ctx.drawImage(logo, x, (banner.height - h) / 2, w, h);
+
+    if (text && text.value) {
+        const font = MOCKUP_FONTS[text.font] || MOCKUP_FONTS.montserrat;
+        // Size the text so its capitals fill ~42% of the board, whatever the font.
+        ctx.font = mockupFontCss(font, 100);
+        const cap = ctx.measureText('H').actualBoundingBoxAscent || 70;
+        let size = 100 * (H * 0.42) / cap;
+        ctx.font = mockupFontCss(font, size);
+        let tw = ctx.measureText(text.value).width;
+        const maxW = logo ? 900 : 1400;
+        if (tw > maxW) {
+            size *= maxW / tw;
+            ctx.font = mockupFontCss(font, size);
+            tw = ctx.measureText(text.value).width;
+        }
+        const m = ctx.measureText(text.value);
+        const y = H / 2 + ((m.actualBoundingBoxAscent || 0) - (m.actualBoundingBoxDescent || 0)) / 2;
+        const css = ctx.font;
+        items.push({
+            w: tw,
+            draw: x => {
+                ctx.font = css;
+                ctx.fillStyle = text.color;
+                ctx.textBaseline = 'alphabetic';
+                ctx.fillText(text.value, x, y);
+            }
+        });
+        if (logo) gap = 150;
+    }
+
+    if (!items.length) return banner;
+    const inner = 60; // between the logo and the text
+    const unit = items.reduce((sum, item) => sum + item.w, 0) + inner * (items.length - 1);
+    for (let x = 60; x < banner.width; x += unit + gap) {
+        let cx = x;
+        items.forEach(item => {
+            item.draw(cx);
+            cx += item.w + inner;
+        });
     }
     return banner;
 }
@@ -874,6 +954,10 @@ function initMockup() {
     const fileName = document.getElementById('mockupFilename');
     const colorInput = document.getElementById('mockupColor');
     const hexInput = document.getElementById('mockupHex');
+    const textInput = document.getElementById('mockupText');
+    const fontSelect = document.getElementById('mockupFont');
+    const textColorInput = document.getElementById('mockupTextColor');
+    const textHexInput = document.getElementById('mockupTextHex');
     const showBtn = document.getElementById('mockupShow');
     const error = document.getElementById('mockupError');
     const caption = document.getElementById('mockupCaption');
@@ -918,22 +1002,38 @@ function initMockup() {
         });
     });
 
-    colorInput.addEventListener('input', () => {
-        hexInput.value = colorInput.value.toUpperCase();
-        setError('');
-    });
-    hexInput.addEventListener('input', () => {
-        const hex = normalizeHex(hexInput.value);
-        if (hex) {
-            colorInput.value = hex.toLowerCase();
+    // Colour wheel and hex field stay in sync, for the background and the text.
+    const syncColor = (picker, field) => {
+        picker.addEventListener('input', () => {
+            field.value = picker.value.toUpperCase();
             setError('');
-        }
+        });
+        field.addEventListener('input', () => {
+            const hex = normalizeHex(field.value);
+            if (hex) {
+                picker.value = hex.toLowerCase();
+                setError('');
+            }
+        });
+    };
+    syncColor(colorInput, hexInput);
+    syncColor(textColorInput, textHexInput);
+
+    const currentText = () => ({
+        value: textInput.value.trim(),
+        font: fontSelect.value,
+        color: normalizeHex(textHexInput.value)
     });
 
-    function show() {
+    async function show() {
         const hex = normalizeHex(hexInput.value);
+        const text = currentText();
         if (!layers) return;
-        renderMockup(canvas, layers, drawMockupBanner(logo, hex));
+        if (text.value && document.fonts) {
+            const font = MOCKUP_FONTS[text.font] || MOCKUP_FONTS.montserrat;
+            try { await document.fonts.load(mockupFontCss(font, 60), text.value); } catch (e) { /* falls back to a system font */ }
+        }
+        renderMockup(canvas, layers, drawMockupBanner(logo, hex, text));
         caption.textContent = t('mock_caption_yours');
         canvas.toBlob(blob => {
             if (!blob) return;
@@ -957,8 +1057,10 @@ function initMockup() {
     };
 
     showBtn.addEventListener('click', () => {
-        if (!logo) return setError(t('mock_err_logo'));
+        const text = currentText();
+        if (!logo && !text.value) return setError(t('mock_err_empty'));
         if (!normalizeHex(hexInput.value)) return setError(t('mock_err_hex'));
+        if (text.value && !text.color) return setError(t('mock_err_text_hex'));
         setError('');
         if (isUnlocked()) show(); else openGate();
     });
@@ -972,6 +1074,9 @@ function initMockup() {
         data.form_source = 'LED-boarding mockup';
         data.background_color = normalizeHex(hexInput.value) || '';
         data.logo_filename = logoName;
+        data.banner_text = textInput.value.trim();
+        data.banner_font = textInput.value.trim() ? (MOCKUP_FONTS[fontSelect.value] || MOCKUP_FONTS.montserrat).family : '';
+        data.text_color = textInput.value.trim() ? (normalizeHex(textHexInput.value) || '') : '';
         data.language = lang;
         data.submitted_at = new Date().toISOString();
         postLead(data);

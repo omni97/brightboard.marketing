@@ -84,6 +84,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </script>
     <!-- /SEO -->
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/mockup/fonts.css">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -124,7 +125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="page-hero">
             <div class="container">
                 <h1 data-i18n="mock_h1">Jouw logo op LED-boarding</h1>
-                <p data-i18n="mock_p">Upload je logo, kies je achtergrondkleur en zie meteen hoe jouw merk eruitziet op de LED-boarding in een Pro League-stadion.</p>
+                <p data-i18n="mock_p">Upload je logo, kies je kleuren, voeg eventueel een tekst toe en zie meteen hoe jouw merk eruitziet op de LED-boarding in een Pro League-stadion.</p>
             </div>
         </div>
 
@@ -146,6 +147,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="mockup-color">
                                 <input type="color" id="mockupColor" value="#0a0a0a" title="Kies een kleur" data-i18n-title="mock_color_title">
                                 <input type="text" id="mockupHex" value="#0A0A0A" maxlength="7" spellcheck="false" autocomplete="off" title="Of typ een hexcode, bv. #FF8C00" data-i18n-title="mock_hex_title">
+                            </div>
+                        </div>
+                        <div class="mockup-step">
+                            <label class="mockup-label" for="mockupText" data-i18n="mock_text">3. Voeg tekst toe (optioneel)</label>
+                            <input type="text" id="mockupText" maxlength="40" autocomplete="off" placeholder="Bv. je slogan of website" data-i18n-placeholder="mock_text_placeholder">
+                            <label class="mockup-sublabel" for="mockupFont" data-i18n="mock_font">Lettertype</label>
+                            <select id="mockupFont">
+                                <option value="montserrat" style="font-family: 'Montserrat'; font-weight: 800;">Montserrat</option>
+                                <option value="anton" style="font-family: 'Anton'; font-weight: 400;">Anton</option>
+                                <option value="bebas" style="font-family: 'Bebas Neue'; font-weight: 400;">Bebas Neue</option>
+                                <option value="oswald" style="font-family: 'Oswald'; font-weight: 700;">Oswald</option>
+                                <option value="orbitron" style="font-family: 'Orbitron'; font-weight: 800;">Orbitron</option>
+                                <option value="pixel" style="font-family: 'Press Start 2P'; font-weight: 400;">Press Start 2P</option>
+                                <option value="playfair" style="font-family: 'Playfair Display'; font-weight: 700;">Playfair Display</option>
+                                <option value="slab" style="font-family: 'Roboto Slab'; font-weight: 700;">Roboto Slab</option>
+                                <option value="pacifico" style="font-family: 'Pacifico'; font-weight: 400;">Pacifico</option>
+                                <option value="marker" style="font-family: 'Permanent Marker'; font-weight: 400;">Permanent Marker</option>
+                            </select>
+                            <span class="mockup-sublabel" data-i18n="mock_text_color">Tekstkleur</span>
+                            <div class="mockup-color">
+                                <input type="color" id="mockupTextColor" value="#ffffff" title="Kies een kleur" data-i18n-title="mock_color_title">
+                                <input type="text" id="mockupTextHex" value="#FFFFFF" maxlength="7" spellcheck="false" autocomplete="off" title="Of typ een hexcode, bv. #FF8C00" data-i18n-title="mock_hex_title">
                             </div>
                         </div>
                         <p class="mockup-error" id="mockupError" role="alert"></p>

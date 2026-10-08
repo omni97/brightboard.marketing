@@ -839,7 +839,17 @@ const MOCKUP_FONTS = {
     playfair: { family: 'Playfair Display', weight: 700 },
     slab: { family: 'Roboto Slab', weight: 700 },
     pacifico: { family: 'Pacifico', weight: 400 },
-    marker: { family: 'Permanent Marker', weight: 400 }
+    marker: { family: 'Permanent Marker', weight: 400 },
+    abril: { family: 'Abril Fatface', weight: 400 },
+    archivo: { family: 'Archivo Black', weight: 400 },
+    bangers: { family: 'Bangers', weight: 400 },
+    blackops: { family: 'Black Ops One', weight: 400 },
+    bungee: { family: 'Bungee', weight: 400 },
+    dancing: { family: 'Dancing Script', weight: 700 },
+    fredoka: { family: 'Fredoka', weight: 600 },
+    lobster: { family: 'Lobster', weight: 400 },
+    righteous: { family: 'Righteous', weight: 400 },
+    russo: { family: 'Russo One', weight: 400 }
 };
 
 const mockupFontCss = (font, size) => `${font.weight} ${size}px "${font.family}"`;

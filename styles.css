@@ -1486,18 +1486,23 @@ footer::before {
     margin: 0 auto;
 }
 
+/* Mock-up on top, the settings underneath in three columns. */
 .mockup-grid {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 32px;
-    align-items: start;
-    margin-top: 10px;
-}
-
-.mockup-controls {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    margin-top: 10px;
+}
+
+.mockup-preview {
+    order: -1;
+}
+
+.mockup-controls {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px 32px;
+    align-items: start;
     background: rgba(10, 10, 10, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
@@ -1614,12 +1619,22 @@ footer::before {
     margin: 4px 0 16px;
 }
 
+.mockup-controls .mockup-error,
+.mockup-controls #mockupShow {
+    grid-column: 1 / -1;
+}
+
+.mockup-controls #mockupShow {
+    justify-self: center;
+    min-width: 260px;
+}
+
 @media (max-width: 860px) {
-    .mockup-grid {
+    .mockup-controls {
         grid-template-columns: 1fr;
     }
 
-    .mockup-preview {
-        order: -1;
+    .mockup-controls #mockupShow {
+        justify-self: stretch;
     }
 }

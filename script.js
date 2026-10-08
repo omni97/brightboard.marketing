@@ -111,7 +111,31 @@ const translations = {
         home_faq3_q: "Wat is LED-boarding in een voetbalstadion?",
         home_faq3_a: "LED-boarding zijn digitale reclameborden langs het veld waarop bewegende advertenties worden getoond. Via BrightBoard adverteer je op de LED-boarding van clubs uit de Pro League en de Challenger Pro League.",
         home_faq4_q: "Wat is het verschil tussen LED-boarding en VBR?",
-        home_faq4_a: "Met LED-boarding staat jouw reclame op de borden in het stadion, zichtbaar voor de supporters ter plaatse en de kijkers thuis. Met VBR (Virtual Boarding Replacement) wordt de reclame op de borden virtueel vervangen in de tv-uitzending: zo ziet het Belgische publiek jouw advertentie tijdens de uitwedstrijden van de Rode Duivels."
+        home_faq4_a: "Met LED-boarding staat jouw reclame op de borden in het stadion, zichtbaar voor de supporters ter plaatse en de kijkers thuis. Met VBR (Virtual Boarding Replacement) wordt de reclame op de borden virtueel vervangen in de tv-uitzending: zo ziet het Belgische publiek jouw advertentie tijdens de uitwedstrijden van de Rode Duivels.",
+        mock_h2: "Bekijk jouw logo op de LED-boarding",
+        mock_p: "Upload je logo, kies je achtergrondkleur en zie meteen hoe jouw merk eruitziet op de LED-boarding in een Pro League-stadion.",
+        mock_logo: "1. Upload je logo",
+        mock_logo_btn: "Kies een bestand",
+        mock_logo_none: "Nog geen logo gekozen",
+        mock_logo_hint: "Een PNG met transparante achtergrond werkt het best. JPG, SVG en WEBP kunnen ook.",
+        mock_color: "2. Kies de achtergrondkleur",
+        mock_color_title: "Kies een kleur",
+        mock_hex_title: "Of typ een hexcode, bv. #FF8C00",
+        mock_show: "Toon mockup",
+        mock_caption_example: "Voorbeeld met het BrightBoard-logo",
+        mock_caption_yours: "Jouw logo op de LED-boarding",
+        mock_download: "Download je mockup",
+        mock_gate_title: "Bijna klaar!",
+        mock_gate_desc: "Vul je gegevens in en bekijk meteen je mockup.",
+        mock_gate_consent: "Door je gegevens in te vullen, mag BrightBoard je contacteren over je mockup en de mogelijkheden voor jouw merk.",
+        mock_gate_submit: "Toon mijn mockup",
+        mock_err_logo: "Upload eerst je logo.",
+        mock_err_file: "Dit bestand kan niet gelezen worden. Kies een PNG, JPG, SVG of WEBP.",
+        mock_err_hex: "Vul een geldige hexcode in, bijvoorbeeld #FF8C00.",
+        nav_mockup: "Gratis mockup",
+        mock_h1: "Jouw logo op LED-boarding",
+        mock_cta: "Probeer de gratis mockup →",
+        mock_h2_faq: "Veelgestelde vragen over reclame op LED-boarding"
     },
     fr: {
         nav_home: 'Accueil',
@@ -224,7 +248,31 @@ const translations = {
         home_faq3_q: "Qu'est-ce que les panneaux LED dans un stade de football ?",
         home_faq3_a: "Les panneaux LED sont des panneaux publicitaires numériques placés au bord du terrain, sur lesquels sont diffusées des publicités animées. Avec BrightBoard, vous faites de la publicité sur les panneaux LED de clubs de Pro League et de Challenger Pro League.",
         home_faq4_q: "Quelle est la différence entre les panneaux LED et le VBR ?",
-        home_faq4_a: "Avec les panneaux LED, votre publicité apparaît sur les panneaux du stade, visible pour les supporters sur place et les téléspectateurs à la maison. Avec le VBR (Virtual Boarding Replacement), la publicité des panneaux est remplacée virtuellement dans la retransmission télévisée : le public belge voit ainsi votre publicité pendant les matchs à l'extérieur des Diables Rouges."
+        home_faq4_a: "Avec les panneaux LED, votre publicité apparaît sur les panneaux du stade, visible pour les supporters sur place et les téléspectateurs à la maison. Avec le VBR (Virtual Boarding Replacement), la publicité des panneaux est remplacée virtuellement dans la retransmission télévisée : le public belge voit ainsi votre publicité pendant les matchs à l'extérieur des Diables Rouges.",
+        mock_h2: "Voyez votre logo sur les panneaux LED",
+        mock_p: "Téléchargez votre logo, choisissez votre couleur de fond et découvrez immédiatement votre marque sur les panneaux LED d'un stade de Pro League.",
+        mock_logo: "1. Téléchargez votre logo",
+        mock_logo_btn: "Choisir un fichier",
+        mock_logo_none: "Aucun logo choisi",
+        mock_logo_hint: "Un PNG avec fond transparent donne le meilleur résultat. JPG, SVG et WEBP sont aussi acceptés.",
+        mock_color: "2. Choisissez la couleur de fond",
+        mock_color_title: "Choisir une couleur",
+        mock_hex_title: "Ou saisissez un code hexadécimal, p. ex. #FF8C00",
+        mock_show: "Afficher la maquette",
+        mock_caption_example: "Exemple avec le logo BrightBoard",
+        mock_caption_yours: "Votre logo sur les panneaux LED",
+        mock_download: "Télécharger votre maquette",
+        mock_gate_title: "Presque terminé !",
+        mock_gate_desc: "Complétez vos coordonnées et découvrez immédiatement votre maquette.",
+        mock_gate_consent: "En complétant vos coordonnées, vous acceptez que BrightBoard vous contacte au sujet de votre maquette et des possibilités pour votre marque.",
+        mock_gate_submit: "Afficher ma maquette",
+        mock_err_logo: "Téléchargez d'abord votre logo.",
+        mock_err_file: "Ce fichier ne peut pas être lu. Choisissez un PNG, JPG, SVG ou WEBP.",
+        mock_err_hex: "Saisissez un code hexadécimal valide, par exemple #FF8C00.",
+        nav_mockup: "Maquette gratuite",
+        mock_h1: "Votre logo sur panneaux LED",
+        mock_cta: "Essayez la maquette gratuite →",
+        mock_h2_faq: "Questions fréquentes sur la publicité sur panneaux LED"
     },
     en: {
         nav_home: 'Home',
@@ -337,7 +385,31 @@ const translations = {
         home_faq3_q: "What is LED boarding in a football stadium?",
         home_faq3_a: "LED boarding consists of digital advertising boards along the pitch that show animated ads. Through BrightBoard you advertise on the LED boarding of clubs in the Pro League and the Challenger Pro League.",
         home_faq4_q: "What is the difference between LED boarding and VBR?",
-        home_faq4_a: "With LED boarding, your ad appears on the boards in the stadium, visible to fans on site and viewers at home. With VBR (Virtual Boarding Replacement), the advertising on the boards is virtually replaced in the TV broadcast, so the Belgian audience sees your ad during the Red Devils' away matches."
+        home_faq4_a: "With LED boarding, your ad appears on the boards in the stadium, visible to fans on site and viewers at home. With VBR (Virtual Boarding Replacement), the advertising on the boards is virtually replaced in the TV broadcast, so the Belgian audience sees your ad during the Red Devils' away matches.",
+        mock_h2: "See your logo on the LED boarding",
+        mock_p: "Upload your logo, pick your background colour and instantly see your brand on the LED boarding of a Pro League stadium.",
+        mock_logo: "1. Upload your logo",
+        mock_logo_btn: "Choose a file",
+        mock_logo_none: "No logo chosen yet",
+        mock_logo_hint: "A PNG with a transparent background works best. JPG, SVG and WEBP are fine too.",
+        mock_color: "2. Pick the background colour",
+        mock_color_title: "Pick a colour",
+        mock_hex_title: "Or type a hex code, e.g. #FF8C00",
+        mock_show: "Show mock-up",
+        mock_caption_example: "Example with the BrightBoard logo",
+        mock_caption_yours: "Your logo on the LED boarding",
+        mock_download: "Download your mock-up",
+        mock_gate_title: "Almost there!",
+        mock_gate_desc: "Fill in your details to see your mock-up straight away.",
+        mock_gate_consent: "By filling in your details, you agree that BrightBoard may contact you about your mock-up and the options for your brand.",
+        mock_gate_submit: "Show my mock-up",
+        mock_err_logo: "Upload your logo first.",
+        mock_err_file: "This file can't be read. Choose a PNG, JPG, SVG or WEBP.",
+        mock_err_hex: "Enter a valid hex code, for example #FF8C00.",
+        nav_mockup: "Free mock-up",
+        mock_h1: "Your logo on LED boarding",
+        mock_cta: "Try the free mock-up →",
+        mock_h2_faq: "Frequently asked questions about LED boarding advertising"
     }
 };
 
@@ -694,6 +766,225 @@ function initContactPhotoReveal() {
     observer.observe(photo);
 }
 
+// LEADS
+const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/11005955/4hn5h0l/';
+
+function postLead(data) {
+    // Sent as x-www-form-urlencoded (not JSON): this is a CORS
+    // "simple request", so the browser sends it directly without
+    // a preflight OPTIONS call — which is what was silently
+    // dropping the POST body before, leaving only the (empty)
+    // querystring visible on the Zapier side.
+    return fetch(ZAPIER_WEBHOOK_URL, {
+        method: 'POST',
+        body: new URLSearchParams(data)
+    }).catch(err => {
+        console.error('Zapier webhook failed:', err);
+    });
+}
+
+// LED-BOARDING MOCK-UP (lead magnet on the Pro League pages)
+// The photo, the goal net and the goalposts/keeper are separate layers in
+// /mockup/. The visitor's banner is drawn between them, one image column at a
+// time: both short sides of the board are vertical in the photo, so each
+// column maps to exactly one banner column, u(x) = a·x / (g·x + 1).
+const MOCKUP = {
+    width: 1122,
+    height: 620,
+    bannerWidth: 2400,
+    bannerHeight: 124,
+    top: [241, 109],
+    bottom: [300, 165],
+    u: { a: 2.0302728179099043, g: -4.531858968548961e-05 },
+    net: { x: 289, y: 170 },
+    front: { x: 331, y: 168 }
+};
+const MOCKUP_UNLOCKED_KEY = 'bb-mockup-lead';
+
+function loadImage(src) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+    });
+}
+
+function drawMockupBanner(logo, color) {
+    const banner = document.createElement('canvas');
+    banner.width = MOCKUP.bannerWidth;
+    banner.height = MOCKUP.bannerHeight;
+    const ctx = banner.getContext('2d');
+    ctx.fillStyle = color;
+    ctx.fillRect(0, 0, banner.width, banner.height);
+
+    // Fit the logo to the board height; very wide logos are capped in width.
+    const lw = logo.naturalWidth || logo.width || 300;
+    const lh = logo.naturalHeight || logo.height || 100;
+    let h = banner.height * 0.62;
+    let w = lw * h / lh;
+    if (w > 640) {
+        w = 640;
+        h = lh * w / lw;
+    }
+    const gap = Math.max(110, h * 1.6);
+    for (let x = 60; x < banner.width; x += w + gap) {
+        ctx.drawImage(logo, x, (banner.height - h) / 2, w, h);
+    }
+    return banner;
+}
+
+function renderMockup(canvas, layers, banner) {
+    const ctx = canvas.getContext('2d');
+    const m = MOCKUP;
+    const u = x => m.u.a * x / (m.u.g * x + 1);
+
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.drawImage(layers.photo, 0, 0);
+
+    for (let x = 0; x < m.width; x++) {
+        const t = (x + 0.5) / m.width;
+        const top = m.top[0] + (m.top[1] - m.top[0]) * t;
+        const bottom = m.bottom[0] + (m.bottom[1] - m.bottom[0]) * t;
+        const u0 = u(x);
+        const u1 = u(x + 1);
+        ctx.drawImage(banner, u0, 0, u1 - u0, m.bannerHeight, x, top, 1, bottom - top);
+    }
+
+    // The net lightens the dark board but barely touches bright LED pixels.
+    ctx.globalCompositeOperation = 'lighten';
+    ctx.drawImage(layers.net, m.net.x, m.net.y);
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.drawImage(layers.front, m.front.x, m.front.y);
+}
+
+function normalizeHex(value) {
+    let v = (value || '').trim().replace(/^#/, '');
+    if (/^[0-9a-f]{3}$/i.test(v)) v = v.split('').map(c => c + c).join('');
+    return /^[0-9a-f]{6}$/i.test(v) ? '#' + v.toUpperCase() : null;
+}
+
+function initMockup() {
+    const canvas = document.getElementById('mockupCanvas');
+    if (!canvas) return;
+
+    const lang = translations[document.documentElement.lang] ? document.documentElement.lang : 'nl';
+    const t = key => translations[lang][key];
+    const fileInput = document.getElementById('mockupLogo');
+    const fileName = document.getElementById('mockupFilename');
+    const colorInput = document.getElementById('mockupColor');
+    const hexInput = document.getElementById('mockupHex');
+    const showBtn = document.getElementById('mockupShow');
+    const error = document.getElementById('mockupError');
+    const caption = document.getElementById('mockupCaption');
+    const download = document.getElementById('mockupDownload');
+    const modal = document.getElementById('mockupModal');
+    const leadForm = document.getElementById('mockupLeadForm');
+
+    let layers = null;
+    let logo = null;
+    let logoName = '';
+    let downloadUrl = null;
+
+    const isUnlocked = () => {
+        try { return localStorage.getItem(MOCKUP_UNLOCKED_KEY) === '1'; } catch (e) { return false; }
+    };
+    const setError = msg => { error.textContent = msg || ''; };
+
+    Promise.all([
+        loadImage('/mockup/stadion.jpg'),
+        loadImage('/mockup/net.png'),
+        loadImage('/mockup/voorgrond.png'),
+        loadImage('/BB WIT.png')
+    ]).then(([photo, net, front, example]) => {
+        layers = { photo, net, front };
+        // Teaser: the BrightBoard logo until the visitor shows their own.
+        renderMockup(canvas, layers, drawMockupBanner(example, '#0A0A0A'));
+    }).catch(err => console.error('Mock-up layers failed to load:', err));
+
+    fileInput.addEventListener('change', () => {
+        const file = fileInput.files && fileInput.files[0];
+        if (!file) return;
+        setError('');
+        const url = URL.createObjectURL(file);
+        loadImage(url).then(img => {
+            logo = img;
+            logoName = file.name;
+            fileName.textContent = file.name;
+        }).catch(() => {
+            logo = null;
+            fileName.textContent = t('mock_logo_none');
+            setError(t('mock_err_file'));
+        });
+    });
+
+    colorInput.addEventListener('input', () => {
+        hexInput.value = colorInput.value.toUpperCase();
+        setError('');
+    });
+    hexInput.addEventListener('input', () => {
+        const hex = normalizeHex(hexInput.value);
+        if (hex) {
+            colorInput.value = hex.toLowerCase();
+            setError('');
+        }
+    });
+
+    function show() {
+        const hex = normalizeHex(hexInput.value);
+        if (!layers) return;
+        renderMockup(canvas, layers, drawMockupBanner(logo, hex));
+        caption.textContent = t('mock_caption_yours');
+        canvas.toBlob(blob => {
+            if (!blob) return;
+            if (downloadUrl) URL.revokeObjectURL(downloadUrl);
+            downloadUrl = URL.createObjectURL(blob);
+            download.href = downloadUrl;
+            download.hidden = false;
+        }, 'image/png');
+        canvas.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const openGate = () => {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        const first = leadForm.querySelector('input:not([type=hidden])');
+        if (first) first.focus();
+    };
+    const closeGate = () => {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    };
+
+    showBtn.addEventListener('click', () => {
+        if (!logo) return setError(t('mock_err_logo'));
+        if (!normalizeHex(hexInput.value)) return setError(t('mock_err_hex'));
+        setError('');
+        if (isUnlocked()) show(); else openGate();
+    });
+
+    document.getElementById('mockupModalClose').addEventListener('click', closeGate);
+    modal.addEventListener('click', e => { if (e.target === modal) closeGate(); });
+
+    leadForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(leadForm).entries());
+        data.form_source = 'LED-boarding mockup';
+        data.background_color = normalizeHex(hexInput.value) || '';
+        data.logo_filename = logoName;
+        data.language = lang;
+        data.submitted_at = new Date().toISOString();
+        postLead(data);
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'mockup_lead' });
+        try { localStorage.setItem(MOCKUP_UNLOCKED_KEY, '1'); } catch (err) { /* private mode: ask again next time */ }
+
+        closeGate();
+        show();
+    });
+}
+
 // FORM HANDLING
 document.addEventListener('DOMContentLoaded', function() {
     // Each language has its own URL (/, /fr/, /en/); the page's lang attribute says which one this is.
@@ -704,6 +995,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactPhotoReveal();
     initRiPopup();
     initBrochureModalTimer();
+    initMockup();
 
     const proLeagueForm = document.getElementById('proLeagueForm');
     const redDevilsForm = document.getElementById('redDevilsForm');
@@ -717,8 +1009,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/11005955/4hn5h0l/';
-
     function submitToZapier(form, sourceLabel, redirectTo) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -727,17 +1017,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data.form_source = sourceLabel;
             data.submitted_at = new Date().toISOString();
 
-            // Sent as x-www-form-urlencoded (not JSON): this is a CORS
-            // "simple request", so the browser sends it directly without
-            // a preflight OPTIONS call — which is what was silently
-            // dropping the POST body before, leaving only the (empty)
-            // querystring visible on the Zapier side.
-            fetch(ZAPIER_WEBHOOK_URL, {
-                method: 'POST',
-                body: new URLSearchParams(data)
-            }).catch(err => {
-                console.error('Zapier webhook failed:', err);
-            }).finally(() => {
+            postLead(data).finally(() => {
                 window.location.href = redirectTo;
             });
         });

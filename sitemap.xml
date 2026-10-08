@@ -63,4 +63,25 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/red-devils"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/rode-duivels"/>
   </url>
+  <url>
+    <loc>https://www.brightboard.marketing/logo-op-led-boarding</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/logo-op-led-boarding"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/logo-sur-panneaux-led"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/logo-on-led-boarding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/logo-op-led-boarding"/>
+  </url>
+  <url>
+    <loc>https://www.brightboard.marketing/fr/logo-sur-panneaux-led</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/logo-op-led-boarding"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/logo-sur-panneaux-led"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/logo-on-led-boarding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/logo-op-led-boarding"/>
+  </url>
+  <url>
+    <loc>https://www.brightboard.marketing/en/logo-on-led-boarding</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.brightboard.marketing/logo-op-led-boarding"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.brightboard.marketing/fr/logo-sur-panneaux-led"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.brightboard.marketing/en/logo-on-led-boarding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.brightboard.marketing/logo-op-led-boarding"/>
+  </url>
 </urlset>

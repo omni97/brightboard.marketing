@@ -77,13 +77,29 @@ PAGES = {
             "en": ("Virtual Boarding Replacement (VBR) during Belgian Red Devils away matches", "Virtual stadium advertising"),
         },
     },
+    "mockup": {
+        "src": "logo-op-led-boarding.html",
+        "path": {"nl": "/logo-op-led-boarding", "fr": "/fr/logo-sur-panneaux-led", "en": "/en/logo-on-led-boarding"},
+        "file": {"nl": "logo-op-led-boarding.html", "fr": "fr/logo-sur-panneaux-led.html", "en": "en/logo-on-led-boarding.html"},
+        "crumb": {"nl": "Jouw logo op LED-boarding", "fr": "Votre logo sur panneaux LED", "en": "Your logo on LED boarding"},
+        "title": {
+            "nl": "Gratis mockup: jouw logo op LED-boarding | BrightBoard",
+            "fr": "Maquette gratuite : votre logo sur panneaux LED | BrightBoard",
+            "en": "Free mock-up: your logo on LED boarding | BrightBoard",
+        },
+        "desc": {
+            "nl": "Upload je logo, kies je kleur en zie meteen hoe jouw reclame eruitziet op de LED-boarding van een voetbalstadion. Gratis en in een paar seconden.",
+            "fr": "Téléchargez votre logo, choisissez votre couleur et voyez immédiatement votre publicité sur les panneaux LED d'un stade de football. Gratuit, en quelques secondes.",
+            "en": "Upload your logo, pick your colour and instantly see your ad on the LED boarding of a football stadium. Free and done in seconds.",
+        },
+    },
 }
 HOME_CRUMB = {"nl": "Home", "fr": "Accueil", "en": "Home"}
 COUNTRY = {"nl": "België", "fr": "Belgique", "en": "Belgium"}
 
 # Dutch nav links point at /home (the address the team wants to share);
 # the other languages link to their own home.
-LINK_TARGETS = {"/home": "home", "/proleague": "pro-league", "/rode-duivels": "red-devils"}
+LINK_TARGETS = {"/home": "home", "/proleague": "pro-league", "/rode-duivels": "red-devils", "/logo-op-led-boarding": "mockup"}
 
 
 def read(name):
@@ -172,7 +188,6 @@ def json_ld(page_key, lang):
             "publisher": {"@id": SITE + "/#organization"},
         })
     else:
-        name, service_type = page["service"][lang]
         graph.append({
             "@type": "BreadcrumbList",
             "itemListElement": [
@@ -182,6 +197,8 @@ def json_ld(page_key, lang):
                  "item": SITE + page["path"][lang]},
             ],
         })
+    if "service" in page:
+        name, service_type = page["service"][lang]
         graph.append({
             "@type": "Service",
             "name": name,
@@ -257,7 +274,7 @@ def build_page(page_key, lang, strings):
         target = LINK_TARGETS[m.group(1)]
         path = "/home" if (lang == "nl" and target == "home") else PAGES[target]["path"][lang]
         return 'href="%s"' % path
-    text = re.sub(r'href="(/home|/proleague|/rode-duivels)"', relink, text)
+    text = re.sub(r'href="(/home|/proleague|/rode-duivels|/logo-op-led-boarding)"', relink, text)
 
     # Language switcher: real links to this page in the other languages.
     options = "\n".join(

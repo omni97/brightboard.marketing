@@ -46,9 +46,9 @@ PAGES = {
             "en": "LED boarding advertising at Pro League clubs | BrightBoard",
         },
         "desc": {
-            "nl": "Adverteer op LED-boarding in de stadions van Pro League-clubs zoals Royal Antwerp FC, KRC Genk, KV Mechelen en OH Leuven en bereik voetbalfans in heel België.",
-            "fr": "Faites de la publicité sur les panneaux LED des stades de Pro League, comme au Royal Antwerp FC, au KRC Genk, au KV Mechelen et à OH Leuven, et touchez les fans de football dans toute la Belgique.",
-            "en": "Advertise on LED boarding in the stadiums of Pro League clubs such as Royal Antwerp FC, KRC Genk, KV Mechelen and OH Leuven, and reach football fans across Belgium.",
+            "nl": "Adverteer op LED-boarding in de stadions van KRC Genk, KVC Westerlo en Lommel SK en bereik voetbalfans in heel België.",
+            "fr": "Faites de la publicité sur les panneaux LED des stades du KRC Genk, du KVC Westerlo et du Lommel SK, et touchez les fans de football dans toute la Belgique.",
+            "en": "Advertise on LED boarding in the stadiums of KRC Genk, KVC Westerlo and Lommel SK, and reach football fans across Belgium.",
         },
         "service": {
             "nl": ("Adverteren op LED-boarding bij Pro League-clubs", "LED-boarding in voetbalstadions"),

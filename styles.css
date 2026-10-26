@@ -470,6 +470,34 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
 }
 
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 10px 14px;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.checkbox-option:has(input:checked) {
+    border-color: var(--primary-orange);
+}
+
+.checkbox-option input {
+    accent-color: var(--primary-orange);
+    margin: 0;
+}
+
 textarea {
     min-height: 120px;
     resize: vertical;

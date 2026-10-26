@@ -31,7 +31,7 @@ document.addEventListener('submit', function(e) {
     phone: formData.get('phone') || '',
     company: formData.get('company') || '',
     region: formData.get('region') || '',
-    club: formData.get('club') || '',
+    club: formData.getAll('club').join(', '),
     message: formData.get('message') || '',
     language: CURRENT_LANGUAGE
   };

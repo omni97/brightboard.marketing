@@ -322,13 +322,12 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label data-i18n="form_club">Dans quel club souhaitez-vous faire de la publicité ?</label>
-                            <select name="club">
-                                <option value="" data-i18n="form_club_placeholder">Sélectionnez un club</option>
-                                <option value="krc-genk">KRC Genk</option>
-                                <option value="kvc-westerlo">KVC Westerlo</option>
-                                <option value="lommel-sk">Lommel SK</option>
-                            </select>
+                            <label class="required" data-i18n="form_club">Dans quel(s) club(s) souhaitez-vous faire de la publicité ?</label>
+                            <div class="checkbox-group" data-required-group>
+                                <label class="checkbox-option"><input type="checkbox" name="club" value="krc-genk"> KRC Genk</label>
+                                <label class="checkbox-option"><input type="checkbox" name="club" value="kvc-westerlo"> KVC Westerlo</label>
+                                <label class="checkbox-option"><input type="checkbox" name="club" value="lommel-sk"> Lommel SK</label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label class="required" data-i18n="form_comment">Commentaire</label>

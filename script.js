@@ -51,8 +51,8 @@ const translations = {
         region_oostvl: 'Oost-Vlaanderen',
         region_westvl: 'West-Vlaanderen',
         region_brussel: 'Brussel',
-        form_club: 'Bij welke club wil je adverteren?',
-        form_club_placeholder: 'Selecteer een club',
+        form_club: 'Bij welke club(s) wil je adverteren?',
+        form_club_error: 'Kies minstens één club.',
         form_comment: 'Commentaar',
         form_toelichting: 'Toelichting',
         form_submit: 'Verzenden',
@@ -213,8 +213,8 @@ const translations = {
         region_oostvl: 'Flandre-Orientale',
         region_westvl: 'Flandre-Occidentale',
         region_brussel: 'Bruxelles',
-        form_club: 'Dans quel club souhaitez-vous faire de la publicité ?',
-        form_club_placeholder: 'Sélectionnez un club',
+        form_club: 'Dans quel(s) club(s) souhaitez-vous faire de la publicité ?',
+        form_club_error: 'Choisissez au moins un club.',
         form_comment: 'Commentaire',
         form_toelichting: 'Détails supplémentaires',
         form_submit: 'Envoyer',
@@ -375,8 +375,8 @@ const translations = {
         region_oostvl: 'East Flanders',
         region_westvl: 'West Flanders',
         region_brussel: 'Brussels',
-        form_club: 'Which club would you like to advertise with?',
-        form_club_placeholder: 'Select a club',
+        form_club: 'Which club(s) would you like to advertise with?',
+        form_club_error: 'Choose at least one club.',
         form_comment: 'Comment',
         form_toelichting: 'Additional information',
         form_submit: 'Submit',
@@ -1383,7 +1383,12 @@ document.addEventListener('DOMContentLoaded', function() {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const data = Object.fromEntries(new FormData(form).entries());
+            // Fields with several values (e.g. the club checkboxes) are sent comma-separated
+            const formData = new FormData(form);
+            const data = {};
+            for (const key of new Set(formData.keys())) {
+                data[key] = formData.getAll(key).join(', ');
+            }
             data.form_source = sourceLabel;
             data.submitted_at = new Date().toISOString();
 
@@ -1396,6 +1401,19 @@ document.addEventListener('DOMContentLoaded', function() {
     if (vbrBrochureForm) {
         submitToZapier(vbrBrochureForm, 'VBR brochure popup', '/thank-you?source=brochure');
     }
+
+    // Checkbox groups marked data-required-group need at least one box ticked;
+    // the browser shows the message on the first box when none is.
+    document.querySelectorAll('[data-required-group]').forEach(group => {
+        const boxes = group.querySelectorAll('input[type="checkbox"]');
+        const lang = translations[document.documentElement.lang] ? document.documentElement.lang : 'nl';
+        const update = () => {
+            const anyChecked = [...boxes].some(b => b.checked);
+            boxes[0].setCustomValidity(anyChecked ? '' : translations[lang].form_club_error);
+        };
+        boxes.forEach(b => b.addEventListener('change', update));
+        update();
+    });
 
     if (proLeagueForm) {
         submitToZapier(proLeagueForm, 'Pro League contactformulier', '/thank-you');

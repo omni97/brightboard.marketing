@@ -262,36 +262,27 @@
         </a>
         <div class="check-icon">&#10003;</div>
         <h1 data-i18n="ty_title">Bedankt voor je aanvraag!</h1>
-        <p id="tyDesc" data-i18n="ty_desc">Je gegevens zijn goed ontvangen. Download hieronder meteen onze brochure over de VBR-aanpak tijdens de Nations League.</p>
-        <a id="tyDownload" href="BrightBoard-nations-League-VBR.pdf" class="btn" download data-i18n="ty_download">Download de brochure (PDF)</a>
+        <p id="tyDesc" data-i18n="ty_desc">Je gegevens zijn goed ontvangen. We nemen binnenkort contact met je op.</p>
         <a href="/home" class="back-link" data-i18n="ty_back">&larr; Terug naar de website</a>
     </div>
     <script>
         const translations = {
             nl: {
                 ty_title: 'Bedankt voor je aanvraag!',
-                ty_desc: 'Je gegevens zijn goed ontvangen. Download hieronder meteen onze brochure over de VBR-aanpak tijdens de Nations League.',
-                ty_desc_generic: 'Je gegevens zijn goed ontvangen. We nemen binnenkort contact met je op.',
-                ty_download: 'Download de brochure (PDF)',
+                ty_desc: 'Je gegevens zijn goed ontvangen. We nemen binnenkort contact met je op.',
                 ty_back: '← Terug naar de website'
             },
             fr: {
                 ty_title: 'Merci pour votre demande !',
-                ty_desc: 'Vos coordonnées ont bien été reçues. Téléchargez ci-dessous notre brochure sur l\'approche du VBR pendant la Ligue des Nations.',
-                ty_desc_generic: 'Vos coordonnées ont bien été reçues. Nous vous contacterons prochainement.',
-                ty_download: 'Télécharger la brochure (PDF)',
+                ty_desc: 'Vos coordonnées ont bien été reçues. Nous vous contacterons prochainement.',
                 ty_back: '← Retour au site'
             },
             en: {
                 ty_title: 'Thank you for your request!',
-                ty_desc: 'Your details have been received. Download our brochure on the VBR approach during the Nations League below.',
-                ty_desc_generic: 'Your details have been received. We will contact you shortly.',
-                ty_download: 'Download the brochure (PDF)',
+                ty_desc: 'Your details have been received. We will contact you shortly.',
                 ty_back: '← Back to the website'
             }
         };
-
-        const isBrochure = new URLSearchParams(window.location.search).get('source') === 'brochure';
 
         function setLanguage(lang) {
             if (!translations[lang]) return;
@@ -302,12 +293,6 @@
                     el.textContent = translations[lang][key];
                 }
             });
-
-            // The brochure download is only relevant when the visitor came
-            // here via the VBR brochure popup; other forms get a generic message.
-            document.getElementById('tyDesc').textContent = isBrochure
-                ? translations[lang].ty_desc
-                : translations[lang].ty_desc_generic;
 
             // Send visitors back to the homepage in their own language.
             document.querySelector('.back-link').href = { nl: '/home', fr: '/fr/', en: '/en/' }[lang];
@@ -345,7 +330,6 @@
             }
         });
 
-        document.getElementById('tyDownload').hidden = !isBrochure;
         setLanguage(localStorage.getItem('bb-lang') || 'nl');
     </script>
 </body>

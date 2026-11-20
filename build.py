@@ -94,7 +94,9 @@ PAGES = {
         },
     },
 }
-HOME_CRUMB = {"nl": "Home", "fr": "Accueil", "en": "Home"}
+# Pages that exist only in Dutch and are not built from a template (blog articles).
+NL_ONLY_PATHS = ["/waarom-adverteren-in-voetbal"]
+HOME_CRUMB ={"nl": "Home", "fr": "Accueil", "en": "Home"}
 COUNTRY = {"nl": "België", "fr": "Belgique", "en": "Belgium"}
 
 # Dutch nav links point at /home (the address the team wants to share);
@@ -256,6 +258,7 @@ SEO_RE = re.compile(
 )
 SWITCHER_RE = re.compile(r'<div class="lang-options" id="langOptions">.*?</div>', re.S)
 HASH_REDIRECT_RE = re.compile(r"\s*<script>\s*// Pro League and Red Devils used to live.*?</script>", re.S)
+BLOG_NAV_RE = re.compile(r'\n\s*<a href="/waarom-adverteren-in-voetbal"[^>]*>.*?</a>')
 # Relative asset/page references; made root-absolute so pages in /fr/ and /en/ resolve them.
 RELATIVE_RE = re.compile(r'\b(src|href|poster)="(?!https?:|/|#|mailto:|tel:|data:|javascript:)([^"]+)"')
 
@@ -289,6 +292,8 @@ def build_page(page_key, lang, strings):
 
     if lang != "nl":
         text = HASH_REDIRECT_RE.sub("", text)
+        # The blog article only exists in Dutch: no menu link to it on FR/EN pages.
+        text = BLOG_NAV_RE.sub("", text)
 
     return bake(text, strings)
 
@@ -302,6 +307,9 @@ def build_sitemap():
         links += '\n    <xhtml:link rel="alternate" hreflang="x-default" href="%s"/>' % (SITE + page["path"]["nl"])
         for lang in LANGS:
             urls.append("  <url>\n    <loc>%s</loc>\n%s\n  </url>" % (SITE + page["path"][lang], links))
+    # Dutch-only pages (blog articles), no translations.
+    for path in NL_ONLY_PATHS:
+        urls.append("  <url>\n    <loc>%s</loc>\n  </url>" % (SITE + path))
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'

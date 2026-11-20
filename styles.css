@@ -1789,6 +1789,16 @@ footer::before {
     flex: 1;
 }
 
+/* Like Pro League and the mock-up page: hero sits on the stadium photo, no grey band. */
+#page-blog .page-hero {
+    background: transparent;
+}
+
+#page-blog .page-hero h1,
+#page-blog .page-hero p {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
 #page-blog .page-hero p {
     max-width: 720px;
     margin-left: auto;
